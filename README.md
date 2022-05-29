@@ -3,7 +3,7 @@ Agilis felhasználói történet
 Konferenciaszervezés weboldala
 ________________________________________
 Miért jó nekünk ez a weboldal?
-A konferencia szervezésekor fontos, hogy legyen egy a szervezők és a résztvevők számára is elérhető felület. A weboldal célja, hogy átlátható struktúrába öntse egy adminisztrációs felületen keresztül a konferencia tervezett szekcióit,, a konferencia résztvevőit / előadóit, a szállás és étkezési igényeket, ezáltal összetett képet kapva a konferencia tervezésével kapcsolatos fontos feladatokról és a pénzügyi kiadásokról is. Valamint lesznek olyan aloldalak is, melyek a résztvevőknek is hasznos információkkal szolgálnak.
+A konferencia szervezésekor fontos, hogy legyen egy a szervezők és a résztvevők számára is elérhető felület. A weboldal célja, hogy átlátható struktúrába  öntse egy adminisztrációs felületen keresztül a konferencia tervezett szekcióit,, a konferencia résztvevőit / előadóit, a szállás és étkezési igényeket, ezáltal összetett képet kapva a konferencia tervezésével kapcsolatos fontos feladatokról és a pénzügyi kiadásokról is. Valamint lesznek olyan aloldalak is, melyek a résztvevőknek is hasznos információkkal szolgálnak.
 ________________________________________
 A Home főoldal
 ________________________________________
