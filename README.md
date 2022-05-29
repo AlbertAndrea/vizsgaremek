@@ -1,4 +1,5 @@
-# Vizsgaremek UserStory
+<pre>
+Vizsgaremek UserStory
 Agilis felhasználói történet
 Konferenciaszervezés weboldala
 ________________________________________
@@ -69,3 +70,4 @@ A konferencia különböző adatait adatvizuációs aloldalon is megjeleníthetj
 További adatok a projektről
 A projekt megvalósítása 6 hétig fog tartani.
 
+</pre>
