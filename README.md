@@ -14,10 +14,12 @@ ________________________________________
 Autentikációs oldal
 ________________________________________
 Ezen az oldalon keresztül jelentkezhetnek be az adminisztrátorok és regisztrálhatnak a felhasználók.
+
 Bejelentkezés
 Alábbiak megadása szükséges:
 •	E-mail cím / Felhasználónév
 •	Jelszó
+
 Regisztráció
 Alábbiak megadása szükséges:
 •	Vezetéknév
@@ -35,18 +37,19 @@ Az adatbázis
 ________________________________________
 Az adatbázisban lehetőség nyílik a résztvevők és egyéni igényeik listázására. Kétfajta nézetet láthatunk az egyik egy táblázatos, listás verzió, míg a másodikban kártyákat használva jeleníthetjük meg csoportosítva ezzel az adatainkat.
 Milyen lehetőségeink vannak az adatbázisban?
-•	Kereshetünk az adatok között.
-•	Rendezhetjük az adatokat.
-•	Új adatokat vehetünk fel.
-•	Az adatokat szerkeszthetjük.
-•	Az adatokat törölhetjük, ebben az esetben egy felugró modal-lal is megkérdezzük, hogy véletlen törlések esélyét csökkentsük.
+
+  •	Kereshetünk az adatok között.
+  •	Rendezhetjük az adatokat.
+  •	Új adatokat vehetünk fel.
+  •	Az adatokat szerkeszthetjük.
+  •	Az adatokat törölhetjük, ebben az esetben egy felugró modal-lal is megkérdezzük, hogy véletlen törlések esélyét csökkentsük.
 A táblázat vagy a kártyák tartalma
-•	Résztvevő regisztrációs adatai
-•	Előadást tart/nem tart
-•	Előadás címe
-•	Választott szekciók
-•	Szállás igények
-•	Étkezési igények
+  •	Résztvevő regisztrációs adatai
+  •	Előadást tart/nem tart
+  •	Előadás címe
+  •	Választott szekciók
+  •	Szállás igények
+  •	Étkezési igények
 
 Elfogadási kritérium:
 Az adattárolás és az adatkezelés egy felhőben található MongoDB adatbázisban történjen. Legyen lehetőség az adatok megjelenítésére, törlésére, új elem bevitelére, módosításra., az adatok szűrésére és rendezésére.
@@ -55,19 +58,25 @@ A tervezett aloldalak
 ________________________________________
 Konferencia szekciók
 Ezen az oldalon kártyákon láthatjuk az egyes szekciók leírását, előadóit.
+
 Elfogadási kritérium:
 Az oldal legyen mobilbarát, szerepeljenek rajta a választható szekciók, előadók,  előadások rövid kivonata.
+
 Szálláshelyek
 Ezen az oldalon kártyákon láthatjuk az egyes szálláshelyeket.
+
 Elfogadási kritérium:
 Az oldal legyen mobilbarát, szerepeljenek rajta a választható szálláshelyek adatai..
+
 Kapcsolat
 A felhasználó megtekintheti a szervező elérhetőségeit, címét, telefonszámát, e-mail címét.
+
 Elfogadási kritérium:
 Az oldal legyen mobilbarát, szerepeljen rajta a szervező neve, telefonszáma, e-mail címe és egy térkép, amelyen fel van tüntetve a szervező címe.
 
 Statisztikai adatok
 A konferencia különböző adatait adatvizuációs aloldalon is megjeleníthetjük.
+
 További adatok a projektről
 A projekt megvalósítása 6 hétig fog tartani.
 
