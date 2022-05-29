@@ -26,6 +26,7 @@ Alábbiak megadása szükséges:
 •	Iskola címe
 •	Saját e-mail cím
 •	Jelszó
+
 Elfogadási kritérium:
 A regisztráció egy űrlap kitöltésével történik, amely legyen mobilbarát, valamint egyértelmű és könnyen kezelhető. Az adatok legyenek ellenőrizve, hogy megfelelő adatot irt-e be a felhasználó.
 
@@ -46,6 +47,7 @@ A táblázat vagy a kártyák tartalma
 •	Választott szekciók
 •	Szállás igények
 •	Étkezési igények
+
 Elfogadási kritérium:
 Az adattárolás és az adatkezelés egy felhőben található MongoDB adatbázisban történjen. Legyen lehetőség az adatok megjelenítésére, törlésére, új elem bevitelére, módosításra., az adatok szűrésére és rendezésére.
 ________________________________________
