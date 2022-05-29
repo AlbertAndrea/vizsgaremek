@@ -17,17 +17,17 @@ Ezen az oldalon keresztül jelentkezhetnek be az adminisztrátorok és regisztr�
 
 Bejelentkezés
 Alábbiak megadása szükséges:
-  •	E-mail cím / Felhasználónév
-  •	Jelszó
+  -	E-mail cím / Felhasználónév
+  -	Jelszó
 
 Regisztráció
 Alábbiak megadása szükséges:
-  •	Vezetéknév
-  •	Keresztnév
-  •	Iskola neve
-  •	Iskola címe
-  •	Saját e-mail cím
-  •	Jelszó
+  -	Vezetéknév
+  -	Keresztnév
+  -	Iskola neve
+  -	Iskola címe
+  -	Saját e-mail cím
+  -	Jelszó
 
 #### Elfogadási kritérium:
 >A regisztráció egy űrlap kitöltésével történik, amely legyen mobilbarát, valamint egyértelmű és könnyen kezelhető. Az adatok legyenek ellenőrizve, hogy megfelelő adatot irt-e be a felhasználó.
@@ -37,19 +37,18 @@ ________________________________________
 ________________________________________
 Az adatbázisban lehetőség nyílik a résztvevők és egyéni igényeik listázására. Kétfajta nézetet láthatunk az egyik egy táblázatos, listás verzió, míg a másodikban kártyákat használva jeleníthetjük meg csoportosítva ezzel az adatainkat.
 Milyen lehetőségeink vannak az adatbázisban?
-
-  •	Kereshetünk az adatok között.
-  •	Rendezhetjük az adatokat.
-  •	Új adatokat vehetünk fel.
-  •	Az adatokat szerkeszthetjük.
-  •	Az adatokat törölhetjük, ebben az esetben egy felugró modal-lal is megkérdezzük, hogy véletlen törlések esélyét csökkentsük.
+  -	Kereshetünk az adatok között.
+  -	Rendezhetjük az adatokat.
+  -	Új adatokat vehetünk fel.
+  -	Az adatokat szerkeszthetjük.
+  -	Az adatokat törölhetjük, ebben az esetben egy felugró modal-lal is megkérdezzük, hogy véletlen törlések esélyét csökkentsük.
 A táblázat vagy a kártyák tartalma
-  •	Résztvevő regisztrációs adatai
-  •	Előadást tart/nem tart
-  •	Előadás címe
-  •	Választott szekciók
-  •	Szállás igények
-  •	Étkezési igények
+  -	Résztvevő regisztrációs adatai
+  -	Előadást tart/nem tart
+  -	Előadás címe
+  -	Választott szekciók
+  -	Szállás igények
+  -	Étkezési igények
 
 #### Elfogadási kritérium:
 >Az adattárolás és az adatkezelés egy felhőben található MongoDB adatbázisban történjen. Legyen lehetőség az adatok megjelenítésére, törlésére, új elem bevitelére, módosításra., az adatok szűrésére és rendezésére.
