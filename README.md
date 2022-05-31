@@ -9,7 +9,8 @@ ________________________________________
 ________________________________________
 A weboldal kezdőoldala, amely az érdeklődés felkeltését is szolgálja. Itt érdekes híreket, korábbi konferenciák statisztikáit találhatjuk. Ismertetjük a weboldalt. Könnyen kezelhető navigációs lehetősséget biztosítunk a további oldalak között. Az oldal reszponzív. A navigációs sávban egy egyszerű kereső is elhelyezhető.
 #### Elfogadási kritérium:
->Az oldal legyen mobilbarát, figyelemfelkeltő, áttekinthető és egyszerű. A menü legyen mobilbarát, könnyen kezelhető, és az oldal felső részén mindig látható.
+> - Az oldal mobilbarát, figyelemfelkeltő, áttekinthető és egyszerű.
+> - A menü mobilbarát, könnyen kezelhető, és az oldal felső részén mindig látható.
 ________________________________________
 ## Autentikációs oldal
 ________________________________________
@@ -30,7 +31,10 @@ Alábbiak megadása szükséges:
   -	Jelszó
 
 #### Elfogadási kritérium:
->A regisztráció egy űrlap kitöltésével történik, amely legyen mobilbarát, valamint egyértelmű és könnyen kezelhető. Az adatok legyenek ellenőrizve, hogy megfelelő adatot irt-e be a felhasználó.
+> - A regisztráció egy űrlap kitöltésével történik.
+> - A regisztráció mobilbarát.
+> - A regisztráció egyértelmű és könnyen kezelhető.
+> - Az adatok ellenőrzés alá kerülnek, hogy megfelelő adatot irt-e be a felhasználó.
 
 ________________________________________
 ## Az adatbázis
@@ -51,7 +55,10 @@ A táblázat vagy a kártyák tartalma
   -	Étkezési igények
 
 #### Elfogadási kritérium:
->Az adattárolás és az adatkezelés egy felhőben található MongoDB adatbázisban történjen. Legyen lehetőség az adatok megjelenítésére, törlésére, új elem bevitelére, módosításra., az adatok szűrésére és rendezésére.
+> - Az adattárolás és az adatkezelés egy felhőben található MongoDB adatbázisban történik.
+> - Lehetőség van az adatok megjelenítésére, módosítására, törlésére.
+> - Lehetőség van új elem bevitelére.
+> - Lehetőség van az adatok szűrésére és rendezésére.
 ________________________________________
 ## A tervezett aloldalak
 ________________________________________
@@ -59,23 +66,27 @@ ________________________________________
 Ezen az oldalon kártyákon láthatjuk az egyes szekciók leírását, előadóit.
 
 #### Elfogadási kritérium:
->Az oldal legyen mobilbarát, szerepeljenek rajta a választható szekciók, előadók,  előadások rövid kivonata.
+> - Az oldal mobilbarát.
+> - Az oldalon szerepelnek a választható szekciók, előadók.
+> - Az oldalon elérhető az előadások rövid kivonata.
 
 ### Szálláshelyek
 Ezen az oldalon kártyákon láthatjuk az egyes szálláshelyeket.
 
 #### Elfogadási kritérium:
->Az oldal legyen mobilbarát, szerepeljenek rajta a választható szálláshelyek adatai..
+> - Az oldal mobilbarát.
+> - Az oldalon megjelennek a választható szálláshelyek adatai.
 
 ### Kapcsolat
 A felhasználó megtekintheti a szervező elérhetőségeit, címét, telefonszámát, e-mail címét.
 
 #### Elfogadási kritérium:
->Az oldal legyen mobilbarát, szerepeljen rajta a szervező neve, telefonszáma, e-mail címe és egy térkép, amelyen fel van tüntetve a szervező címe.
+> - Az oldal mobilbarát.
+> - Az oldalon szerepel a szervező neve, telefonszáma, e-mail címe és egy térkép, amelyen fel van tüntetve a szervező címe.
 
 ### Statisztikai adatok
 A konferencia különböző adatait adatvizuációs aloldalon is megjeleníthetjük.
 
 ### További adatok a projektről
-A projekt megvalósítása 6 hétig fog tartani.
+A projekt megvalósítása 6 hetet vesz igénybe.
 
