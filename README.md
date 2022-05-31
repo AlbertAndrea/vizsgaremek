@@ -46,6 +46,7 @@ Milyen lehetőségeink vannak az adatbázisban?
   -	Új adatokat vehetünk fel.
   -	Az adatokat szerkeszthetjük.
   -	Az adatokat törölhetjük, ebben az esetben egy felugró modal-lal is megkérdezzük, hogy véletlen törlések esélyét csökkentsük.
+
 A táblázat vagy a kártyák tartalma
   -	Résztvevő regisztrációs adatai
   -	Előadást tart/nem tart
