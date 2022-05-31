@@ -56,14 +56,14 @@ A táblázat vagy a kártyák tartalma
 
 #### Elfogadási kritérium:
 > - Az adattárolás és az adatkezelés egy felhőben található MongoDB adatbázisban történik.
-> - Lehetőség van az adatok megjelenítésére, módosítására, törlésére.
-> - Lehetőség van új elem bevitelére.
-> - Lehetőség van az adatok szűrésére és rendezésére.
+> - Van lehetőség az adatok megjelenítésére, módosítására, törlésére.
+> - Van lehetőség új elem bevitelére.
+> - Van lehetőség az adatok szűrésére és rendezésére.
 ________________________________________
 ## A tervezett aloldalak
 ________________________________________
 ### Konferencia szekciók
-Ezen az oldalon kártyákon láthatjuk az egyes szekciók leírását, előadóit.
+Ezen az oldalon kártyákon láthatjuk az egyes szekciók leírását, előadóit és az előadások rövid kivonatát.
 
 #### Elfogadási kritérium:
 > - Az oldal mobilbarát.
