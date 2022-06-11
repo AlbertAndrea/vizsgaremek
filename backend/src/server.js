@@ -8,7 +8,7 @@ mongoose.Promise = global.Promise;
 
 const app = express();
 
-const { host, user, pass} = config.get('database');
+const { host, user, pass } = config.get('database');
 mongoose.connect(`mongodb+srv://${host}`, {
     user,
     pass,
