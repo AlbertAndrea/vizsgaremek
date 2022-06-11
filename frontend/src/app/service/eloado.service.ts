@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Eloado } from '../model/eloado';
 
 @Injectable({
@@ -42,17 +44,13 @@ export class EloadoService {
     },
   ];
 
-  constructor() { }
+apiUrl = environment.apiUrl;
+
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   getAll(): Observable<Eloado[]> {
-    const list = [];
-    for(let i = 0; i < 25; i++) {
-      const item = [...this.list];
-      for(let j=0; j < item.length; j++) {
-        item[j]._id = `id-${ Math.round( Math.random() * 10000 ) }`;
-        list.push(item[j]);
-      }
-    }
-    return of(list);
+    return this.http.get<Eloado[]>(`${this.apiUrl}eloadok`);
   }
 }

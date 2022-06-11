@@ -40,6 +40,13 @@ export class ConfigService {
     {key: 'address', title: 'Címe'},
   ];
 
+  szekcioTableColumns: INgxTableColumn[] = [
+    {key: '_id', title: '#'},
+    {key: 'section', title: 'Szekció neve'},
+    {key: 'section_leader', title: "Szekcióvezető"}
+  ];
+
 
   constructor() { }
-}
+
+};

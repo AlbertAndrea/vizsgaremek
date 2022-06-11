@@ -1,15 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Iskola } from '../model/iskola';
+import { Observable } from 'rxjs';
+import { Szekcio } from '../model/szekcio';
 
 @Injectable({
   providedIn: 'root'
 })
-export class IskolaService {
+export class SzekcioService {
 
-  list: Iskola[] = []
+  list: Szekcio[] = []
 
   apiUrl = environment.apiUrl;
 
@@ -17,7 +17,7 @@ export class IskolaService {
     private http: HttpClient,
   ) { }
 
-  getAll(): Observable<Iskola[]> {
-    return this.http.get<Iskola[]>(`${this.apiUrl}iskolak`);
+  getAll(): Observable<Szekcio[]> {
+    return this.http.get<Szekcio[]>(`${this.apiUrl}szekciok`);
   }
 }
