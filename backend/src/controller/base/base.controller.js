@@ -24,7 +24,7 @@ module.exports = (model) => {
             .then(entity => res.json(entity))
             .catch(err => {
                 res.statusCode = 501
-                res.json(err) //vmi hiba van itt
+                res.json(err)
             })
         },
 
