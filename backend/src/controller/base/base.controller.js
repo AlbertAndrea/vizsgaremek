@@ -15,21 +15,20 @@ module.exports = (model) => {
                 .catch(err => next(new createError.NotFound(err.message)));
         },
         deleteOne(req, res, next) {
-            console.log(req.params.id);
+            console.log(`deleteOne: ${req.params.id}`);
             return service.deleteOne(req.params.id)
                 .then(() => res.json({}))
                 .catch(err => {
                     res.statusCode = 404;
                     res.json(err);
-                });
+            });
         },
         updateOne(req, res, next) {
-            console.log(`update: ${req.params.id}`);
             return service.updateOne(req.params.id, req.body)
-            .then(entity => res.json(entity))
-            .catch(err => {
-                res.statusCode = 501;
-                res.json(err);
+                .then(entity => res.json(entity))
+                .catch(err => {
+                    res.statusCode = 501;
+                    res.json(err);
             })
         },
 

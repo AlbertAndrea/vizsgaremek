@@ -26,7 +26,6 @@ export class IskolaService {
   }
 
   update(entity: Iskola): Observable<Iskola> {
-    console.log(`service: ${entity._id}`);
     return this.http.patch<Iskola>(
         `${this.apiUrl}iskolak/${entity._id}`,
         entity,
