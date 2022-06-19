@@ -1,0 +1,13 @@
+<form (ngSubmit)="update(eloado)" *ngIf="eloado$ | async as eloado">
+  <div class="form-group">
+    <label>Name</label>
+    <input
+      name="name"
+      [(ngModel)]="eloado.name"
+      type="text"
+      class="form-control"
+    ></div>
+  <button class="btn btn-primary mt-4">
+    Update
+  </button>
+</form>

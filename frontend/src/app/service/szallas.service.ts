@@ -19,4 +19,21 @@ export class SzallasService {
   getAll(): Observable<Szallas[]> {
     return this.http.get<Szallas[]>(`${this.apiUrl}szallasok`);
   }
+
+  getOne(id: string): Observable<Szallas> {
+    return this.http.get<Szallas>(`${this.apiUrl}szallasok/${id}`);
+  }
+
+  update(entity: Szallas): Observable<Szallas> {
+    return this.http.patch<Szallas>(
+        `${this.apiUrl}szallasok/${entity._id}`,
+        entity,
+    );
+  }
+
+  delete(id: string): Observable<Szallas> {
+    console.log(id);
+    return this.http.delete<Szallas>(`${this.apiUrl}szallasok/${id}`)
+  }
+
 }

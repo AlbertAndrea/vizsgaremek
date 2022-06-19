@@ -32,7 +32,6 @@ export class IskolaService {
     );
   }
 
-
   delete(id: string): Observable<Iskola> {
     console.log(id);
     return this.http.delete<Iskola>(`${this.apiUrl}iskolak/${id}`)

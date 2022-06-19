@@ -15,7 +15,6 @@ module.exports = (model) => {
                 .catch(err => next(new createError.NotFound(err.message)));
         },
         deleteOne(req, res, next) {
-            console.log(`deleteOne: ${req.params.id}`);
             return service.deleteOne(req.params.id)
                 .then(() => res.json({}))
                 .catch(err => {

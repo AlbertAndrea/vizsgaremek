@@ -17,6 +17,10 @@ import { SzallasComponent } from './page/szallas/szallas.component';
 import { SzekcioComponent } from './page/szekcio/szekcio.component';
 import { DataTableModule } from './data-table/data-table.module';
 import { IskolaEditorComponent } from './page/iskola-editor/iskola-editor.component';
+import { ResztvevoEditorComponent } from './page/resztvevo-editor/resztvevo-editor.component';
+import { EloadoEditorComponent } from './page/eloado-editor/eloado-editor.component';
+import { SzekcioEditorComponent } from './page/szekcio-editor/szekcio-editor.component';
+import { SzallasEditorComponent } from './page/szallas-editor/szallas-editor.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { IskolaEditorComponent } from './page/iskola-editor/iskola-editor.compon
     SzallasComponent,
     SzekcioComponent,
     IskolaEditorComponent,
+    ResztvevoEditorComponent,
+    EloadoEditorComponent,
+    SzekcioEditorComponent,
+    SzallasEditorComponent,
   ],
   imports: [
     BrowserModule,

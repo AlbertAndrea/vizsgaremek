@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Eloado } from 'src/app/model/eloado';
 import { ConfigService } from 'src/app/service/config.service';
 import { EloadoService } from 'src/app/service/eloado.service';
 
@@ -16,9 +18,23 @@ export class EloadoComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private eloadoService: EloadoService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
+  }
+
+  startEdit(eloado: Eloado): void {
+    this.router.navigate(['/', 'eloado', 'edit', eloado._id]);
+  }
+
+  deleteEntity(eloado: Eloado): void {
+    this.eloadoService.delete(eloado[`_id`]).subscribe({
+      next: ()  => {
+        this.list$ = this.eloadoService.getAll();
+      },
+      error: err => console.error(err),
+    });
   }
 
 }

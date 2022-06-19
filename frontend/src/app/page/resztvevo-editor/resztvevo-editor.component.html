@@ -1,0 +1,13 @@
+<form (ngSubmit)="update(resztvevo)" *ngIf="resztvevo$ | async as resztvevo">
+  <div class="form-group">
+    <label>Name</label>
+    <input
+      name="name"
+      [(ngModel)]="resztvevo.name"
+      type="text"
+      class="form-control"
+    ></div>
+  <button class="btn btn-primary mt-4">
+    Update
+  </button>
+</form>

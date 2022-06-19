@@ -18,4 +18,6 @@
   *ngIf="list$ | async as list"
   [columns]="columns"
   [list]="list"
+  (onEdit)="startEdit($event)"
+  (onDelete)="deleteEntity($event)"
 ></ngx-data-table>

@@ -10,7 +10,7 @@ import { Resztvevo } from '../model/resztvevo';
 
 export class ResztvevoService {
 
-  list: Resztvevo[] = []
+  list: Resztvevo[] = [];
 
   apiUrl = environment.apiUrl;
 
@@ -21,4 +21,22 @@ export class ResztvevoService {
   getAll(): Observable<Resztvevo[]> {
     return this.http.get<Resztvevo[]>(`${this.apiUrl}resztvevok`);
   }
+
+  getOne(id: string): Observable<Resztvevo> {
+    return this.http.get<Resztvevo>(`${this.apiUrl}resztvevok/${id}`);
+  }
+
+  update(entity: Resztvevo): Observable<Resztvevo> {
+    return this.http.patch<Resztvevo>(
+        `${this.apiUrl}resztvevok/${entity._id}`,
+        entity,
+    );
+  }
+
+  delete(id: string): Observable<Resztvevo> {
+    console.log(id);
+    return this.http.delete<Resztvevo>(`${this.apiUrl}resztvevok/${id}`)
+  }
+
+
 }

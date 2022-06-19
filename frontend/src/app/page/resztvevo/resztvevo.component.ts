@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Resztvevo } from 'src/app/model/resztvevo';
 import { ConfigService } from 'src/app/service/config.service';
 import { ResztvevoService } from 'src/app/service/resztvevo.service';
 
@@ -16,9 +18,23 @@ export class ResztvevoComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private resztvevoService: ResztvevoService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
   }
+  startEdit(resztvevo: Resztvevo): void {
+    this.router.navigate(['/', 'resztvevo', 'edit', resztvevo._id]);
+  }
+
+  deleteEntity(resztvevo: Resztvevo): void {
+    this.resztvevoService.delete(resztvevo[`_id`]).subscribe({
+      next: ()  => {
+        this.list$ = this.resztvevoService.getAll();
+      },
+      error: err => console.error(err),
+    });
+  }
+
 
 }

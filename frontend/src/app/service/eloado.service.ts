@@ -9,36 +9,7 @@ import { Eloado } from '../model/eloado';
 })
 export class EloadoService {
 
-  list: Eloado[] = [
-    {
-      _id: '123as',
-      name: 'Szabó Béla',
-      school: 'Iskola1',
-      presentation: 'Előadás1',
-      section: 'Szekció1',
-    },
-    {
-      _id: '124as',
-      name: 'Kovács Katalin',
-      school: 'Iskola2',
-      presentation: 'Előadás2',
-      section: 'Szekció2',
-    },
-    {
-      _id: '125as',
-      name: 'Asztalos Anna',
-      school: 'Iskola3',
-      presentation: 'Előadás3',
-      section: 'Szekció1',
-    },
-    {
-      _id: '125as',
-      name: 'Szűcs Gábor',
-      school: 'Iskola4',
-      presentation: 'Előadás4',
-      section: 'Szekció3',
-    },
-  ];
+  list: Eloado[] = [];
 
 apiUrl = environment.apiUrl;
 
@@ -49,4 +20,21 @@ apiUrl = environment.apiUrl;
   getAll(): Observable<Eloado[]> {
     return this.http.get<Eloado[]>(`${this.apiUrl}eloadok`);
   }
+
+  getOne(id: string): Observable<Eloado> {
+    return this.http.get<Eloado>(`${this.apiUrl}eloadok/${id}`);
+  }
+
+  update(entity: Eloado): Observable<Eloado> {
+    return this.http.patch<Eloado>(
+        `${this.apiUrl}eloadok/${entity._id}`,
+        entity,
+    );
+  }
+
+  delete(id: string): Observable<Eloado> {
+    console.log(id);
+    return this.http.delete<Eloado>(`${this.apiUrl}eloadok/${id}`)
+  }
+
 }

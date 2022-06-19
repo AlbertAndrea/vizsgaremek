@@ -1,0 +1,20 @@
+<form (ngSubmit)="update(szallas)" *ngIf="szallas$ | async as szallas">
+  <div class="form-group">
+    <label>Szállás neve</label>
+    <input
+      name="name"
+      [(ngModel)]="szallas.name"
+      type="text"
+      class="form-control"
+    >
+    <label>Szállás címe</label>
+    <input
+      name="address"
+      [(ngModel)]="szallas.address"
+      type="text"
+      class="form-control"
+    ></div>
+  <button class="btn btn-primary mt-4">
+    Update
+  </button>
+</form>

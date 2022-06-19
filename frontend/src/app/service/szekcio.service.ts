@@ -20,4 +20,21 @@ export class SzekcioService {
   getAll(): Observable<Szekcio[]> {
     return this.http.get<Szekcio[]>(`${this.apiUrl}szekciok`);
   }
+
+  getOne(id: string): Observable<Szekcio> {
+    return this.http.get<Szekcio>(`${this.apiUrl}szekciok/${id}`);
+  }
+
+  update(entity: Szekcio): Observable<Szekcio> {
+    return this.http.patch<Szekcio>(
+        `${this.apiUrl}szekciok/${entity._id}`,
+        entity,
+    );
+  }
+
+  delete(id: string): Observable<Szekcio> {
+    console.log(id);
+    return this.http.delete<Szekcio>(`${this.apiUrl}szekciok/${id}`)
+  }
+
 }
