@@ -1,10 +1,10 @@
 const express = require('express');
 const config = require('config');
 const bodyParser = require('body-parser');
-const morgan = require('mongoose');
+const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+//mongoose.Promise = global.Promise;
 
 const app = express();
 

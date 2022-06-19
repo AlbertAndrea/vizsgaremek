@@ -15,6 +15,7 @@ module.exports = (model) => {
                 .catch(err => next(new createError.NotFound(err.message)));
         },
         deleteOne(req, res, next) {
+            console.log(req.params.id);
             return service.deleteOne(req.params.id)
                 .then(() => res.json({}))
                 .catch(err => {
@@ -23,6 +24,7 @@ module.exports = (model) => {
                 });
         },
         updateOne(req, res, next) {
+            console.log(`update: ${req.params.id}`);
             return service.updateOne(req.params.id, req.body)
             .then(entity => res.json(entity))
             .catch(err => {
