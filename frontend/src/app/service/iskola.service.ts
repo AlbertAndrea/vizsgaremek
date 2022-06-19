@@ -26,11 +26,17 @@ export class IskolaService {
   }
 
   update(entity: Iskola): Observable<Iskola> {
-    const id = entity._id;
-    delete entity._id;
+    // const id = entity._id;
+    // delete entity._id;
     return this.http.patch<Iskola>(
-        `${this.apiUrl}iskolak/${id}`,
+        `${this.apiUrl}iskolak/${entity._id}`,
         entity,
     );
   }
+
+  delete(id: string): Observable<Iskola> {
+    console.log(id);
+    return this.http.delete<Iskola>(`${this.apiUrl}iskolak/${id}`)
+  }
+
 }

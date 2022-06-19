@@ -25,7 +25,7 @@ export class ConfigService {
   ];
 
   eloadoTableColumns: INgxTableColumn[] = [
-    {key: '_id', title: '#'},
+    //{key: '_id', title: '#'},
     {key: 'name', title: 'Előadó neve'},
     {key: 'school', title: 'Iskola'},
     {key: 'presentation', title: 'Előadás címe'},
@@ -33,25 +33,25 @@ export class ConfigService {
   ];
 
   iskolaTableColumns: INgxTableColumn[] = [
-    {key: '_id', title: '#'},
+    //{key: '_id', title: '#'},
     {key: 'name', title: 'Iskola neve'},
     {key: 'address', title: 'Címe'},
   ];
 
   szekcioTableColumns: INgxTableColumn[] = [
-    {key: '_id', title: '#'},
+    //{key: '_id', title: '#'},
     {key: 'section', title: 'Szekció neve'},
     {key: 'section_leader', title: 'Szekcióvezető'}
   ];
 
   szallasTableColumns: INgxTableColumn[] = [
-    {key: '_id', title: '#'},
+    //{key: '_id', title: '#'},
     {key: 'name', title: 'Szállás neve'},
     {key: 'address', title: 'Szállás címe'}
   ];
 
   resztvevoTableColumns: INgxTableColumn[] = [
-    {key: '_id', title: '#'},
+    //{key: '_id', title: '#'},
     {key: 'name', title: 'Résztvevő neve'},
     {key: 'school', title: 'Résztvevő iskolája'},
     {key: 'presentation', title: 'Előadást tart'}

@@ -19,6 +19,8 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
 
   @Output() onEdit: EventEmitter<T> = new EventEmitter();
 
+  @Output() onDelete: EventEmitter<T> = new EventEmitter();
+
   pageSize: number = 10;
 
   startSlice: number = 0;
@@ -45,6 +47,10 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
 
   raiseEdit(entity: T): void {
     this.onEdit.emit(entity);
+  }
+
+  raiseDelete(entity: T): void {
+    this.onDelete.emit(entity);
   }
 
 }

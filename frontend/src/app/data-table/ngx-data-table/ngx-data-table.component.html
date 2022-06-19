@@ -6,6 +6,7 @@
             {{ col.title }}
         </th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -15,8 +16,15 @@
         </td>
         <td>
           <div class="btn-group">
-              <button (click)="raiseEdit(row)" class="btn btn-info">
-                Edit
+              <button (click)="raiseEdit(row)" type="button" class="btn btn-sm btn-info">
+                Szerkesztés
+              </button>
+           </div>
+        </td>
+        <td>
+          <div class="btn-group">
+              <button (click)="raiseDelete(row)" type="button" class="btn btn-sm btn-danger">
+                Törlés
               </button>
            </div>
         </td>

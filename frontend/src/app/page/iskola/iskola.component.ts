@@ -27,4 +27,13 @@ export class IskolaComponent implements OnInit {
     this.router.navigate(['/', 'iskola', 'edit', iskola._id]);
   }
 
+  deleteEntity(iskola: Iskola): void {
+    this.iskolaService.delete(iskola[`_id`]).subscribe({
+      next: ()  => {
+        this.list$ = this.iskolaService.getAll();
+      },
+      error: err => console.error(err),
+    });
+  }
+
 }
