@@ -1,9 +1,16 @@
 <form (ngSubmit)="update(iskola)" *ngIf="iskola$ | async as iskola">
   <div class="form-group">
-    <label>Name</label>
+    <label>Iskola neve</label>
     <input
       name="name"
       [(ngModel)]="iskola.name"
+      type="text"
+      class="form-control"
+    >
+    <label>Iskola címe</label>
+    <input
+      name="address"
+      [(ngModel)]="iskola.address"
       type="text"
       class="form-control"
     ></div>

@@ -1,9 +1,30 @@
 <form (ngSubmit)="update(eloado)" *ngIf="eloado$ | async as eloado">
   <div class="form-group">
-    <label>Name</label>
+    <label>Előadó neve</label>
     <input
       name="name"
       [(ngModel)]="eloado.name"
+      type="text"
+      class="form-control"
+    >
+    <label>Előadó iskolája</label>
+    <input
+      name="school"
+      [(ngModel)]="eloado.school"
+      type="text"
+      class="form-control"
+    >
+    <label>Előadás címe</label>
+    <input
+      name="presentationName"
+      [(ngModel)]="eloado.presentationName"
+      type="text"
+      class="form-control"
+    >
+    <label>Szekció neve</label>
+    <input
+      name="section"
+      [(ngModel)]="eloado.section"
       type="text"
       class="form-control"
     ></div>

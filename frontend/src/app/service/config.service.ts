@@ -27,15 +27,15 @@ export class ConfigService {
   eloadoTableColumns: INgxTableColumn[] = [
     //{key: '_id', title: '#'},
     {key: 'name', title: 'Előadó neve'},
-    {key: 'school', title: 'Iskola'},
+    {key: 'school', title: 'Előadó iskolája'},
     {key: 'presentation', title: 'Előadás címe'},
-    {key: 'section', title: 'Szekció'},
+    {key: 'section', title: 'Szekció neve'},
   ];
 
   iskolaTableColumns: INgxTableColumn[] = [
     //{key: '_id', title: '#'},
     {key: 'name', title: 'Iskola neve'},
-    {key: 'address', title: 'Címe'},
+    {key: 'address', title: 'Iskola címe'},
   ];
 
   szekcioTableColumns: INgxTableColumn[] = [

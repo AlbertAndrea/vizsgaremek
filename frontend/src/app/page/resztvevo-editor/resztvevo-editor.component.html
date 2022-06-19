@@ -1,13 +1,27 @@
 <form (ngSubmit)="update(resztvevo)" *ngIf="resztvevo$ | async as resztvevo">
   <div class="form-group">
-    <label>Name</label>
+    <label>Résztvevő neve</label>
     <input
       name="name"
       [(ngModel)]="resztvevo.name"
       type="text"
       class="form-control"
+    >
+    <label>Résztvevő iskolája</label>
+    <input
+      name="school"
+      [(ngModel)]="resztvevo.school"
+      type="text"
+      class="form-control"
+    >
+    <label>Előadást tart</label>
+    <input
+      name="presentation"
+      [(ngModel)]="resztvevo.presentation"
+      type="text"
+      class="form-control"
     ></div>
-  <button class="btn btn-primary mt-4">
+    <button class="btn btn-primary mt-4">
     Update
   </button>
 </form>

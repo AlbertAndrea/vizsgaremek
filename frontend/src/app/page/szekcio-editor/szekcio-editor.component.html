@@ -1,9 +1,16 @@
 <form (ngSubmit)="update(szekcio)" *ngIf="szekcio$ | async as szekcio">
   <div class="form-group">
-    <label>Name</label>
+    <label>Szekció neve</label>
     <input
-      name="name"
+      name="section"
       [(ngModel)]="szekcio.section"
+      type="text"
+      class="form-control"
+    >
+    <label>Szekcióvezető</label>
+    <input
+      name="section_leader"
+      [(ngModel)]="szekcio.section_leader"
       type="text"
       class="form-control"
     ></div>
