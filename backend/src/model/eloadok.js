@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 
 const EloadokSchema = mongoose.Schema({
-    firstName: {
+    name: {
         type: String,
         require: true,
-     },
-     lastName: {
-        type: String,
-        require: true,
+        validate: {
+            validator: function(v) {
+            return /^[a-űA-Ű \-\.]{5,25}$/.test(v)
+         }
+     }
      },
      school: {
         type: String,
@@ -21,6 +22,8 @@ const EloadokSchema = mongoose.Schema({
         type: String,
         require: true,
      },
+}, {
+   timeStamps: true
 });
 
 module.exports = mongoose.model('Eloadok', EloadokSchema);

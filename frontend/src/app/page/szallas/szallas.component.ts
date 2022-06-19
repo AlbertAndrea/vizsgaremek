@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from 'src/app/service/config.service';
+import { SzallasService } from 'src/app/service/szallas.service';
 
 @Component({
   selector: 'app-szallas',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SzallasComponent implements OnInit {
 
-  constructor() { }
+  columns = this.config.szallasTableColumns;
+
+  list$ = this.szallasService.getAll();
+
+  constructor(
+    private config: ConfigService,
+    private szallasService: SzallasService,
+  ) { }
 
   ngOnInit(): void {
   }

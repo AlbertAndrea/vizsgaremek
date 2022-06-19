@@ -13,4 +13,10 @@
 </div>
 
 
-<h2>Szállások listája</h2>
+<!-- <h2>Szállások listája</h2> -->
+<ngx-data-table
+  *ngIf="list$ | async as list"
+  [columns]="columns"
+  [list]="list"
+></ngx-data-table>
+

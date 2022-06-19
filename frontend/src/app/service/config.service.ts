@@ -19,7 +19,6 @@ export class ConfigService {
     {link: '/eloado', title: 'Előadók', icon: 'user'},
     {link: '/resztvevo', title: 'Résztvevők', icon: 'users'},
     {link: '/szallas', title: 'Szállások', icon: 'moon'},
-    {link: '/etkezes', title: 'Étkezések', icon: 'coffee'},
 
 
     //itt veszük fel az oldalakat
@@ -27,8 +26,7 @@ export class ConfigService {
 
   eloadoTableColumns: INgxTableColumn[] = [
     {key: '_id', title: '#'},
-    {key: 'firstName', title: 'Vezetéknév'},
-    {key: 'lastName', title: 'Keresztnév'},
+    {key: 'name', title: 'Előadó neve'},
     {key: 'school', title: 'Iskola'},
     {key: 'presentation', title: 'Előadás címe'},
     {key: 'section', title: 'Szekció'},
@@ -43,9 +41,21 @@ export class ConfigService {
   szekcioTableColumns: INgxTableColumn[] = [
     {key: '_id', title: '#'},
     {key: 'section', title: 'Szekció neve'},
-    {key: 'section_leader', title: "Szekcióvezető"}
+    {key: 'section_leader', title: 'Szekcióvezető'}
   ];
 
+  szallasTableColumns: INgxTableColumn[] = [
+    {key: '_id', title: '#'},
+    {key: 'name', title: 'Szállás neve'},
+    {key: 'address', title: 'Szállás címe'}
+  ];
+
+  resztvevoTableColumns: INgxTableColumn[] = [
+    {key: '_id', title: '#'},
+    {key: 'name', title: 'Résztvevő neve'},
+    {key: 'school', title: 'Résztvevő iskolája'},
+    {key: 'presentation', title: 'Előadást tart'}
+  ];
 
   constructor() { }
 

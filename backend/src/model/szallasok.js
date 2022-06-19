@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const IskolakSchema = mongoose.Schema({
+const SzallasokSchema = mongoose.Schema({
     name: {
         type: String,
         require: true,
@@ -10,7 +10,7 @@ const IskolakSchema = mongoose.Schema({
         require: true,
      },
 }, {
-   timeStamps: true
-});
+    timeStamps: true
+ });
 
-module.exports = mongoose.model('Iskolak', IskolakSchema);
+module.exports = mongoose.model('Szallasok', SzallasokSchema);

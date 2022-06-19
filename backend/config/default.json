@@ -1,7 +1,7 @@
 {
     "database": {
         "user": "userDB",
-        "pass": "EJbJk8veeT1r9YsP",
+        "pass": "cgXX56MbRgSMnNfd",
         "host": "cluster0.3wdo0.mongodb.net/?retryWrites=true&w=majority"
     }
 }

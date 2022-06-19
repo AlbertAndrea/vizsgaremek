@@ -1,5 +1,5 @@
-export class Iskola {
-  _id?: string = '';
+export class Szallas {
+  _id: string = '';
   name: string = '';
   address: string = '';
 }

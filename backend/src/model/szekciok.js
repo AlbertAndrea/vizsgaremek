@@ -9,6 +9,8 @@ const SzekciokSchema = mongoose.Schema({
         type: String,
         require: true,
      },
+}, {
+   timeStamps: true
 });
 
 module.exports = mongoose.model('Szekciok', SzekciokSchema);

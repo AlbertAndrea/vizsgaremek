@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EloadoComponent } from './page/eloado/eloado.component';
-import { EtkezesComponent } from './page/etkezes/etkezes.component';
 import { HomeComponent } from './page/home/home.component';
+import { IskolaEditorComponent } from './page/iskola-editor/iskola-editor.component';
 import { IskolaComponent } from './page/iskola/iskola.component';
 import { ResztvevoComponent } from './page/resztvevo/resztvevo.component';
 import { SzallasComponent } from './page/szallas/szallas.component';
@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'iskola',
     component: IskolaComponent,
+  },
+  {
+    path: 'iskola/edit/:id',
+    component: IskolaEditorComponent,
   },
   {
     path: 'szekcio',
@@ -33,10 +37,7 @@ const routes: Routes = [
     path: 'szallas',
     component: SzallasComponent,
   },
-  {
-    path: 'etkezes',
-    component: EtkezesComponent,
-  },
+
 ];
 
 @NgModule({

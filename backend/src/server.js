@@ -14,7 +14,7 @@ mongoose.connect(`mongodb+srv://${host}`, {
     pass,
 }).then ( conn => console.log('Connection success!') )
 .catch( err => {
-    throw new Error(err.message)
+    throw new Error(err.message);
 });
 
 //Cross origin resource sharing: CORS
@@ -22,10 +22,16 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-//Eloadok
+//Előadók
 app.use('/eloadok', require('./controller/eloadok/eloadok.router'));
+//Szekciók
 app.use('/szekciok', require('./controller/szekciok/szekciok.router'));
+//Iskolák
 app.use('/iskolak', require('./controller/iskolak/iskolak.router'));
+//Résztvevők
+app.use('/resztvevok', require('./controller/resztvevok/resztvevok.router'));
+//Szállások
+app.use('/szallasok', require('./controller/szallasok/szallasok.router'));
 
  app.use('/', (req, res) => {
      console.log(req.url);

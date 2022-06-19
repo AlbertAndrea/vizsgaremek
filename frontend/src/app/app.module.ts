@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +15,8 @@ import { EloadoComponent } from './page/eloado/eloado.component';
 import { ResztvevoComponent } from './page/resztvevo/resztvevo.component';
 import { SzallasComponent } from './page/szallas/szallas.component';
 import { SzekcioComponent } from './page/szekcio/szekcio.component';
-import { EtkezesComponent } from './page/etkezes/etkezes.component';
 import { DataTableModule } from './data-table/data-table.module';
+import { IskolaEditorComponent } from './page/iskola-editor/iskola-editor.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { DataTableModule } from './data-table/data-table.module';
     ResztvevoComponent,
     SzallasComponent,
     SzekcioComponent,
-    EtkezesComponent
+    IskolaEditorComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +38,7 @@ import { DataTableModule } from './data-table/data-table.module';
     IconModule,
     DataTableModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

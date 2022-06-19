@@ -5,12 +5,20 @@
         <th *ngFor="let col of columns" scope="col">
             {{ col.title }}
         </th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let row of list | slice:startSlice:endSlice">
         <td *ngFor="let col of columns">
           {{ row[col.key] }}
+        </td>
+        <td>
+          <div class="btn-group">
+              <button (click)="raiseEdit(row)" class="btn btn-info">
+                Edit
+              </button>
+           </div>
         </td>
       </tr>
     </tbody>

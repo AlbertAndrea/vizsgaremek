@@ -1,0 +1,13 @@
+<form (ngSubmit)="update(iskola)" *ngIf="iskola$ | async as iskola">
+  <div class="form-group">
+    <label>Name</label>
+    <input
+      name="name"
+      [(ngModel)]="iskola.name"
+      type="text"
+      class="form-control"
+    ></div>
+  <button class="btn btn-primary mt-4">
+    Update
+  </button>
+</form>

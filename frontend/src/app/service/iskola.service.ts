@@ -20,4 +20,17 @@ export class IskolaService {
   getAll(): Observable<Iskola[]> {
     return this.http.get<Iskola[]>(`${this.apiUrl}iskolak`);
   }
+
+  getOne(id: string): Observable<Iskola> {
+    return this.http.get<Iskola>(`${this.apiUrl}iskolak/${id}`);
+  }
+
+  update(entity: Iskola): Observable<Iskola> {
+    const id = entity._id;
+    delete entity._id;
+    return this.http.patch<Iskola>(
+        `${this.apiUrl}iskolak/${id}`,
+        entity,
+    );
+  }
 }

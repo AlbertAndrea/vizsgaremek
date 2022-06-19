@@ -13,10 +13,11 @@
 </div>
 
 
-<h2>Iskolák listája</h2>
+<!-- <h2>Iskolák listája</h2> -->
 
 <ngx-data-table
   *ngIf="list$ | async as list"
   [columns]="columns"
   [list]="list"
+  (onEdit)="startEdit($event)"
 ></ngx-data-table>

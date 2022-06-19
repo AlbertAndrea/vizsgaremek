@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Iskola } from 'src/app/model/iskola';
 import { ConfigService } from 'src/app/service/config.service';
 import { IskolaService } from 'src/app/service/iskola.service';
 
@@ -16,9 +18,13 @@ export class IskolaComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private iskolaService: IskolaService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
+  }
+  startEdit(iskola: Iskola): void {
+    this.router.navigate(['/', 'iskola', 'edit', iskola._id]);
   }
 
 }
