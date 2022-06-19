@@ -21,11 +21,11 @@ module.exports = (model) => {
         },
         updateOne(req, res, next) {
             return service.updateOne(req.params.id, req.body)
-                .then(entity => res.json(entity))
-                .catch(err => {
-                    res.statusCode = 501;
-                    res.json(err);
-                });
+            .then(entity => res.json(entity))
+            .catch(err => {
+                res.statusCode = 501
+                res.json(err) //vmi hiba van itt
+            })
         },
 
     }

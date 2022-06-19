@@ -9,7 +9,7 @@ import { Iskola } from '../model/iskola';
 })
 export class IskolaService {
 
-  list: Iskola[] = []
+  //list: Iskola[] = []
 
   apiUrl = environment.apiUrl;
 

@@ -6,7 +6,7 @@ module.exports = (model) => {
             const newEntity = new model(body);
             const error = newEntity.ValidateSync();
             if(!error) {
-                return model.findByIdAndUpadate(id, body, {new: true});
+                return model.findByIdAndUpdate(id, body, {new: true});
             }
             throw new Error(error);
         },
