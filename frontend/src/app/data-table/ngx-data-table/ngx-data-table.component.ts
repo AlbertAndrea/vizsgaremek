@@ -1,3 +1,4 @@
+import { outputAst } from '@angular/compiler';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
@@ -20,6 +21,8 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
   @Output() onEdit: EventEmitter<T> = new EventEmitter();
 
   @Output() onDelete: EventEmitter<T> = new EventEmitter();
+
+  @Output() onSave: EventEmitter<T> = new EventEmitter();
 
   pageSize: number = 10;
 
@@ -51,6 +54,10 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
 
   raiseDelete(entity: T): void {
     this.onDelete.emit(entity);
+  }
+
+  reiseSave(entity: T): void {
+    this.onSave.emit(entity);
   }
 
 }

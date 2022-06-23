@@ -9,8 +9,19 @@ module.exports = (model) => {
             if (!error) {
                 return model.findByIdAndUpdate(id, body, {new: true})
             }
-            throw new Error(error)
+            throw new Error(error);
         },
+
+        createOne: async (body) => {
+            const newEntity = new model(body);
+            const error = newEntity.validateSync();
+            if (!error) {
+              const saved = await newEntity.save();
+              return model.findById(saved._id);
+            }
+            throw new Error(error);
+          },
+          
         deleteOne: (id) => model.findByIdAndRemove(id),
     };
 };

@@ -9,7 +9,7 @@ import { Eloado } from '../model/eloado';
 })
 export class EloadoService {
 
-  list: Eloado[] = [];
+list: Eloado[] = [];
 
 apiUrl = environment.apiUrl;
 
@@ -36,5 +36,13 @@ apiUrl = environment.apiUrl;
     console.log(id);
     return this.http.delete<Eloado>(`${this.apiUrl}eloadok/${id}`)
   }
+
+   create(entity: Eloado): Observable<Eloado> {
+     return this.http.post<Eloado>(
+       `${this.apiUrl}eloadok`,
+       entity
+     );
+   }
+
 
 }

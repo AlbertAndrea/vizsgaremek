@@ -5,6 +5,7 @@ import { EloadoComponent } from './page/eloado/eloado.component';
 import { HomeComponent } from './page/home/home.component';
 import { IskolaEditorComponent } from './page/iskola-editor/iskola-editor.component';
 import { IskolaComponent } from './page/iskola/iskola.component';
+import { LoginComponent } from './page/login/login.component';
 import { ResztvevoEditorComponent } from './page/resztvevo-editor/resztvevo-editor.component';
 import { ResztvevoComponent } from './page/resztvevo/resztvevo.component';
 import { SzallasEditorComponent } from './page/szallas-editor/szallas-editor.component';
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'iskola',
     component: IskolaComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'iskola/edit/:id',

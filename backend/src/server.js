@@ -22,16 +22,20 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+const authenticatedJwt = require('./model/auth/authenticate');
+
 //Előadók
 app.use('/eloadok', require('./controller/eloadok/eloadok.router'));
 //Szekciók
 app.use('/szekciok', require('./controller/szekciok/szekciok.router'));
 //Iskolák
-app.use('/iskolak', require('./controller/iskolak/iskolak.router'));
+app.use('/iskolak', authenticatedJwt, require('./controller/iskolak/iskolak.router'));
 //Résztvevők
 app.use('/resztvevok', require('./controller/resztvevok/resztvevok.router'));
 //Szállások
 app.use('/szallasok', require('./controller/szallasok/szallasok.router'));
+//Login
+app.use('/login', require('./controller/login/login.router'));
 
  app.use('/', (req, res) => {
      console.log(req.url);

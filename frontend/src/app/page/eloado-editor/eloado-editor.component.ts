@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { Eloado } from 'src/app/model/eloado';
 import { EloadoService } from 'src/app/service/eloado.service';
-import { ResztvevoService } from 'src/app/service/resztvevo.service';
 
 
 @Component({
@@ -17,7 +16,6 @@ export class EloadoEditorComponent implements OnInit {
     switchMap(params => this.eloadoService.getOne(params['id'])),
   );
 
-
   constructor(
     private router: Router,
     private eloadoService: EloadoService,
@@ -27,11 +25,28 @@ export class EloadoEditorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  update(eloado: Eloado): void {
-    this.eloadoService.update(eloado).subscribe({
-      next: updatedEloado => this.router.navigate(['/', 'eloado']),
-      error: err => console.error(err),
-    });
+  onSave(eloado: Eloado): void {
+    if (!eloado._id) {
+      eloado._id = undefined;
+      this.eloadoService.create(eloado).subscribe({
+        next: updatedEloado => {
+          this.router.navigate(['/', 'eloado'])
+        },
+        error: err => console.error(err),
+      });
+    } else {
+      this.eloadoService.update(eloado).subscribe({
+        next: updatedEloado => this.router.navigate(['/', 'eloado']),
+         error: err => console.error(err),
+      });
+    }
   }
-
 }
+
+
+// update(eloado: Eloado): void {
+  //   this.eloadoService.update(eloado).subscribe({
+  //     next: updatedEloado => this.router.navigate(['/', 'eloado']),
+  //     error: err => console.error(err),
+  //   });
+  // }

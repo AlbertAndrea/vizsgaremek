@@ -28,7 +28,7 @@ export class ConfigService {
     //{key: '_id', title: '#'},
     {key: 'name', title: 'Előadó neve'},
     {key: 'school', title: 'Előadó iskolája'},
-    {key: 'presentation', title: 'Előadás címe'},
+    {key: 'presentationName', title: 'Előadás címe'},
     {key: 'section', title: 'Szekció neve'},
   ];
 

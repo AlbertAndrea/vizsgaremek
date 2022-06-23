@@ -1,5 +1,5 @@
 export class Eloado {
-  _id: string = '';
+  _id?: string = '';
   name: string = '';
   school: string = '';
   presentationName: string = '';

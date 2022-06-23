@@ -2,6 +2,22 @@ const express = require('express');
 const baseService = require('./base.service');
 const createError = require('http-errors')
 
+const checkModel = (model, body, next) => {
+    const validationError = new model(body).validateSync();
+    if (validationError) {
+        next(
+            new createError.BadRequest(
+                JSON.stringify({
+                    message: 'Schema validation error!',
+                    error: validationError
+                }),
+            ),
+        );
+        return false;
+    };
+    return true;
+  };
+
 module.exports = (model) => {
     const service = baseService(model);
     return {
@@ -31,5 +47,13 @@ module.exports = (model) => {
             })
         },
 
-    }
-}
+        createOne( req, res, next) {  
+            return service.createOne(req.body)
+              .then(entity => res.json(entity))
+              .catch(err => {
+                res.statusCode = 501;
+                res.json(err);
+              });
+         },
+    };
+};
