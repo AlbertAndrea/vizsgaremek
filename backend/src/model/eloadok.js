@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const szekciok = require('./szekciok');
 
 const EloadokSchema = mongoose.Schema({
     name: {
@@ -7,8 +8,8 @@ const EloadokSchema = mongoose.Schema({
         validate: {
             validator: function(v) {
             return /^[a-űA-Ű \-\.]{5,75}$/.test(v);
-         }
-     }
+            }
+        }
      },
      school: {
         type: String,
@@ -18,10 +19,14 @@ const EloadokSchema = mongoose.Schema({
         type: String,
         require: true,
      },
-     section: {
-        type: String,
-        require: true,
-     },
+   //   section: {
+   //      type: String,
+   //      require: true,
+   //   },
+     szekciok: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Szekciok',
+     }
 }, {
    timeStamps: true
 });

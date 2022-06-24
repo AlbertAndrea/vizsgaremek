@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
-//mongoose.Promise = global.Promise;
 
 const app = express();
 
@@ -24,17 +23,11 @@ app.use(bodyParser.json());
 
 const authenticatedJwt = require('./model/auth/authenticate');
 
-//Előadók
-app.use('/eloadok', require('./controller/eloadok/eloadok.router'));
-//Szekciók
+//Oldalak
+app.use('/eloadok', authenticatedJwt, require('./controller/eloadok/eloadok.router'));
 app.use('/szekciok', require('./controller/szekciok/szekciok.router'));
-//Iskolák
-app.use('/iskolak', authenticatedJwt, require('./controller/iskolak/iskolak.router'));
-//Résztvevők
-app.use('/resztvevok', require('./controller/resztvevok/resztvevok.router'));
-//Szállások
-app.use('/szallasok', require('./controller/szallasok/szallasok.router'));
-//Login
+app.use('/iskolak', require('./controller/iskolak/iskolak.router'));
+app.use('/resztvevok', require('./controller/resztvevok/resztvevok.router'));app.use('/szallasok', require('./controller/szallasok/szallasok.router'));
 app.use('/login', require('./controller/login/login.router'));
 
  app.use('/', (req, res) => {

@@ -32,4 +32,13 @@ describe('REST API integration tests', () => {
                 done();
         });
     });
+
+    test('GET /szekciok', done => {
+        supertest(app).get('/szekciok').expect(200)
+            .then(response => {
+                expect(Array.isArray(response.body)).toBeTruthy();
+                done();
+        });
+    });
+
 });

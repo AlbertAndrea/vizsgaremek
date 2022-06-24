@@ -26,14 +26,14 @@ router.post('/', async (req, res, next) => {
     const user =  await User.findOne({ email });
 
     if (!user) {
-        return res.sendStatus(401);
+        return res.sendStatus(404);
     }
 
-    user.comparePassword(password, function(err, isMatch) {
-        if (err) {
-            return res.sendStatus(403);
-        }
+    user.password = 'test789'
+    await user.save();
 
+    const valid = user.verifyPasswordSync(password);
+    if (valid) {
         const accessToken = jwt.sign({ //ezt tároljuk a tokenben
             _id: user._id,
             email: user.email,
@@ -47,8 +47,9 @@ router.post('/', async (req, res, next) => {
             accessToken,
             user: {...user._doc, password: ''},
         });
-    });
-
+    } else {
+        return res.sendStatus(401);
+    }
 });
 
 

@@ -1,47 +1,16 @@
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { Iskola } from '../model/iskola';
+import { BaseService } from './base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class IskolaService {
-
-  //list: Iskola[] = []
-
-  apiUrl = environment.apiUrl;
+export class IskolaService extends BaseService<Iskola> {
 
   constructor(
-    private http: HttpClient,
-  ) { }
-
-  getAll(): Observable<Iskola[]> {
-    return this.http.get<Iskola[]>(`${this.apiUrl}iskolak`);
+    http: HttpClient,
+  ) {
+    super(http, 'iskolak');
   }
-
-  getOne(id: string): Observable<Iskola> {
-    return this.http.get<Iskola>(`${this.apiUrl}iskolak/${id}`);
-  }
-
-  update(entity: Iskola): Observable<Iskola> {
-    return this.http.patch<Iskola>(
-        `${this.apiUrl}iskolak/${entity._id}`,
-        entity,
-    );
-  }
-
-  delete(id: string): Observable<Iskola> {
-    console.log(id);
-    return this.http.delete<Iskola>(`${this.apiUrl}iskolak/${id}`)
-  }
-
-  create(entity: Iskola): Observable<Iskola> {
-    return this.http.post<Iskola>(
-      `${this.apiUrl}iskolak`,
-      entity
-    );
-  }
-
 }
