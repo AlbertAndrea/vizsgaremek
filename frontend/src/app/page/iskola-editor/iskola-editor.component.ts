@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, switchMap, of } from 'rxjs';
 import { Iskola } from 'src/app/model/iskola';
 import { IskolaService } from 'src/app/service/iskola.service';
 
@@ -12,8 +12,15 @@ import { IskolaService } from 'src/app/service/iskola.service';
 export class IskolaEditorComponent implements OnInit {
 
   iskola$: Observable<Iskola> = this.activatedRoute.params.pipe(
-    switchMap(params => this.iskolaService.getOne(params['id'])),
+    switchMap(params => {
+      if (params['id'] === '0') {
+        return of(new Iskola());
+      }
+      return this.iskolaService.getOne(params['id']);
+    })
   );
+  iskola: Iskola = new Iskola();
+
 
   constructor(
     private router: Router,
@@ -24,10 +31,20 @@ export class IskolaEditorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  update(iskola: Iskola): void {
-    this.iskolaService.update(iskola).subscribe({
-      next: updatedIskola => this.router.navigate(['/', 'iskola']),
-      error: err => console.error(err),
-    });
+  onSave(iskola: Iskola): void {
+    if (!iskola._id) {
+      iskola._id = undefined;
+      this.iskolaService.create(iskola).subscribe({
+        next: updatedIskola => {
+          this.router.navigate(['/', 'iskola'])
+        },
+        error: err => console.error(err),
+      });
+    } else {
+      this.iskolaService.update(iskola).subscribe({
+        next: updatedIskola => this.router.navigate(['/', 'iskola']),
+         error: err => console.error(err),
+      });
+    }
   }
 }

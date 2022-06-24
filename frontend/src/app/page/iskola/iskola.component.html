@@ -15,6 +15,14 @@
 
 <!-- <h2>Iskolák listája</h2> -->
 
+<div class="row">
+  <div class="col-3 d-grid mb-3">
+    <button type="submit" [routerLink]="['/', 'iskola', 'edit', '0']" class="btn btn-success w-100">
+     Új iskola
+    </button>
+  </div>
+</div>
+
 <ngx-data-table
   *ngIf="list$ | async as list"
   [columns]="columns"

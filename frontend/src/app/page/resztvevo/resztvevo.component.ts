@@ -28,13 +28,13 @@ export class ResztvevoComponent implements OnInit {
   }
 
   deleteEntity(resztvevo: Resztvevo): void {
-    this.resztvevoService.delete(resztvevo[`_id`]).subscribe({
-      next: ()  => {
-        this.list$ = this.resztvevoService.getAll();
-      },
-      error: err => console.error(err),
-    });
+    if (resztvevo._id) {
+      this.resztvevoService.delete(resztvevo._id).subscribe({
+        next: ()  => {
+          this.list$ = this.resztvevoService.getAll()
+        },
+        error: err => console.error(err)
+      })
+    }
   }
-
-
 }

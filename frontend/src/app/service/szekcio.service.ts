@@ -37,4 +37,11 @@ export class SzekcioService {
     return this.http.delete<Szekcio>(`${this.apiUrl}szekciok/${id}`)
   }
 
+  create(entity: Szekcio): Observable<Szekcio> {
+    return this.http.post<Szekcio>(
+      `${this.apiUrl}szekciok`,
+      entity
+    );
+  }
+
 }

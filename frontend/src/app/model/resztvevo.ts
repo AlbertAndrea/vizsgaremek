@@ -1,5 +1,5 @@
 export class Resztvevo {
-  _id: string = '';
+  _id?: string = '';
   name: string = '';
   school: string = '';
   presentation: boolean = false;

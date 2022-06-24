@@ -29,12 +29,13 @@ export class SzekcioComponent implements OnInit {
   }
 
   deleteEntity(szekcio: Szekcio): void {
-    this.szekcioService.delete(szekcio[`_id`]).subscribe({
-      next: ()  => {
-        this.list$ = this.szekcioService.getAll();
-      },
-      error: err => console.error(err),
-    });
+    if (szekcio._id) {
+      this.szekcioService.delete(szekcio._id).subscribe({
+        next: ()  => {
+          this.list$ = this.szekcioService.getAll()
+        },
+        error: err => console.error(err)
+      })
+    }
   }
-
 }

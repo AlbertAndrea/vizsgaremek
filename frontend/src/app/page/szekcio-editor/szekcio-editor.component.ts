@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, switchMap, of } from 'rxjs';
 import { Szekcio } from 'src/app/model/szekcio';
 import { SzekcioService } from 'src/app/service/szekcio.service';
 
@@ -12,8 +12,15 @@ import { SzekcioService } from 'src/app/service/szekcio.service';
 export class SzekcioEditorComponent implements OnInit {
 
   szekcio$: Observable<Szekcio> = this.activatedRoute.params.pipe(
-    switchMap(params => this.szekcioService.getOne(params['id'])),
+    switchMap(params => {
+      if (params['id'] === '0') {
+        return of(new Szekcio());
+      }
+      return this.szekcioService.getOne(params['id']);
+    })
   );
+  szekcio: Szekcio = new Szekcio();
+
 
   constructor(
     private router: Router,
@@ -24,11 +31,20 @@ export class SzekcioEditorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  update(szekcio: Szekcio): void {
-    this.szekcioService.update(szekcio).subscribe({
-      next: updatedSzekcio => this.router.navigate(['/', 'szekcio']),
-      error: err => console.error(err),
-    });
+  onSave(szekcio: Szekcio): void {
+    if (!szekcio._id) {
+      szekcio._id = undefined;
+      this.szekcioService.create(szekcio).subscribe({
+        next: updatedSzekcio => {
+          this.router.navigate(['/', 'szekcio'])
+        },
+        error: err => console.error(err),
+      });
+    } else {
+      this.szekcioService.update(szekcio).subscribe({
+        next: updatedSzekcio => this.router.navigate(['/', 'szekcio']),
+         error: err => console.error(err),
+      });
+    }
   }
-
 }

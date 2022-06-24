@@ -6,7 +6,7 @@ const EloadokSchema = mongoose.Schema({
         require: true,
         validate: {
             validator: function(v) {
-            return /^[a-űA-Ű \-\.]{5,25}$/.test(v);
+            return /^[a-űA-Ű \-\.]{5,75}$/.test(v);
          }
      }
      },
@@ -14,7 +14,7 @@ const EloadokSchema = mongoose.Schema({
         type: String,
         require: true,
      },
-     presentation: {
+     presentationName: {
         type: String,
         require: true,
      },

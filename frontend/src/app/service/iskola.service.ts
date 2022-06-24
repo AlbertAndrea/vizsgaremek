@@ -37,4 +37,11 @@ export class IskolaService {
     return this.http.delete<Iskola>(`${this.apiUrl}iskolak/${id}`)
   }
 
+  create(entity: Iskola): Observable<Iskola> {
+    return this.http.post<Iskola>(
+      `${this.apiUrl}iskolak`,
+      entity
+    );
+  }
+
 }

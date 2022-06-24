@@ -28,12 +28,15 @@ export class IskolaComponent implements OnInit {
   }
 
   deleteEntity(iskola: Iskola): void {
-    this.iskolaService.delete(iskola[`_id`]).subscribe({
-      next: ()  => {
-        this.list$ = this.iskolaService.getAll();
-      },
-      error: err => console.error(err),
-    });
+    if (iskola._id) {
+      this.iskolaService.delete(iskola._id).subscribe({
+        next: ()  => {
+          this.list$ = this.iskolaService.getAll()
+        },
+        error: err => console.error(err)
+      })
+    }
   }
+
 
 }

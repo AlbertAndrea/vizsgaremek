@@ -24,9 +24,9 @@ router.delete('/:id', (req, res, next) => {
     return controller.deleteOne(req, res, next);
 });
 
-//post
-router.post('/', (req, res, next) => {
-    return controller.create(req, res, next);
-});
+//create
+ router.post('/', (req, res, next) => {
+     return controller.createOne(req, res, next);
+ });
 
 module.exports = router;

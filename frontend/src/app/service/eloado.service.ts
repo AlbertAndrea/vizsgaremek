@@ -37,12 +37,11 @@ apiUrl = environment.apiUrl;
     return this.http.delete<Eloado>(`${this.apiUrl}eloadok/${id}`)
   }
 
-   create(entity: Eloado): Observable<Eloado> {
-     return this.http.post<Eloado>(
-       `${this.apiUrl}eloadok`,
-       entity
-     );
-   }
-
+  create(entity: Eloado): Observable<Eloado> {
+    return this.http.post<Eloado>(
+      `${this.apiUrl}eloadok`,
+      entity
+    );
+  }
 
 }

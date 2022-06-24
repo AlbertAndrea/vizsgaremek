@@ -38,5 +38,11 @@ export class ResztvevoService {
     return this.http.delete<Resztvevo>(`${this.apiUrl}resztvevok/${id}`)
   }
 
+  create(entity: Resztvevo): Observable<Resztvevo> {
+    return this.http.post<Resztvevo>(
+      `${this.apiUrl}resztvevok`,
+      entity
+    );
+  }
 
 }

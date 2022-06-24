@@ -4,6 +4,11 @@ const ResztvevokSchema = mongoose.Schema({
     name: {
         type: String,
         require: true,
+        validate: {
+            validator: function(v) {
+               return /^[a-űA-Ű \-\.]{5,75}$/.test(v);
+               }
+         }
      },
      school: {
         type: String,

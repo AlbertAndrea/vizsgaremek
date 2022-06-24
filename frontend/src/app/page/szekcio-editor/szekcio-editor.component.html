@@ -1,5 +1,5 @@
-<form (ngSubmit)="update(szekcio)" *ngIf="szekcio$ | async as szekcio">
-  <div class="form-group">
+<form (ngSubmit)="onSave(szekcio)" *ngIf="szekcio$ | async as szekcio">
+    <div class="form-group">
     <label>Szekció neve</label>
     <input
       name="section"
@@ -14,7 +14,7 @@
       type="text"
       class="form-control"
     ></div>
-  <button class="btn btn-primary mt-4">
-    Update
+  <button type="submit" class="btn btn-primary mt-4">
+    Mentés
   </button>
 </form>

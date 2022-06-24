@@ -1,4 +1,4 @@
-<form (ngSubmit)="update(resztvevo)" *ngIf="resztvevo$ | async as resztvevo">
+<form (ngSubmit)="onSave(resztvevo)" *ngIf="resztvevo$ | async as resztvevo">
   <div class="form-group">
     <label>Résztvevő neve</label>
     <input
@@ -21,7 +21,7 @@
       type="text"
       class="form-control"
     ></div>
-    <button class="btn btn-primary mt-4">
-    Update
+    <button type="submit" class="btn btn-primary mt-4">
+    Mentés
   </button>
 </form>
