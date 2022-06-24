@@ -30,14 +30,27 @@ export class EloadoComponent implements OnInit {
     this.router.navigate(['/', 'eloado', 'edit', eloado._id]);
   };
 
+  // deleteEntity(eloado: Eloado): void {
+  //   this.eloadoService.delete(eloado.['id'].subscribe({
+  //     next: ()  => {
+  //       this.list$ = this.eloadoService.getAll();
+  //     },
+  //     error: err => console.error(err),
+  //   });
+  // };
+
   deleteEntity(eloado: Eloado): void {
-    this.eloadoService.delete(eloado.['_id']).subscribe({
-      next: ()  => {
-        this.list$ = this.eloadoService.getAll();
-      },
-      error: err => console.error(err),
-    });
-  };
+    if (eloado._id) {
+      this.eloadoService.delete(eloado._id).subscribe({
+        next: ()  => {
+          //this.messageService.showDelete(`${eloado['name']} tagóvoda törölve`)
+          this.list$ = this.eloadoService.getAll()
+        },
+        error: err => console.error(err)
+        //alert
+      })
+    }
+  }
 
   // createEntity(): void {
   //   this.router.navigate(['/', 'eloado', 'edit', '0']);

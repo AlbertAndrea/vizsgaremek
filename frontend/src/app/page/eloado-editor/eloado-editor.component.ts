@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, switchMap, of } from 'rxjs';
 import { Eloado } from 'src/app/model/eloado';
 import { EloadoService } from 'src/app/service/eloado.service';
 
@@ -13,8 +13,14 @@ import { EloadoService } from 'src/app/service/eloado.service';
 export class EloadoEditorComponent implements OnInit {
 
   eloado$: Observable<Eloado> = this.activatedRoute.params.pipe(
-    switchMap(params => this.eloadoService.getOne(params['id'])),
+    switchMap(params => {
+      if (params['id'] === '0') {
+        return of(new Eloado());
+      }
+      return this.eloadoService.getOne(params['id']);
+    })
   );
+  eloado: Eloado = new Eloado();
 
   constructor(
     private router: Router,
@@ -23,6 +29,7 @@ export class EloadoEditorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
   }
 
   onSave(eloado: Eloado): void {
