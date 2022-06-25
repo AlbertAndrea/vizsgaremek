@@ -40,6 +40,6 @@ export class SzekcioComponent implements OnInit {
   }
 
   createEntity(): void {
-    this.router.navigate(['/', 'eloado', 'edit', '0']);
+    this.router.navigate(['/', 'szekcio', 'edit', '0']);
   }
 }

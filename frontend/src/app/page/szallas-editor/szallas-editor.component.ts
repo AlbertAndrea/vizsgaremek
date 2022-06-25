@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, switchMap, of } from 'rxjs';
 import { Szallas } from 'src/app/model/szallas';
 import { SzallasService } from 'src/app/service/szallas.service';
 
@@ -12,8 +12,14 @@ import { SzallasService } from 'src/app/service/szallas.service';
 export class SzallasEditorComponent implements OnInit {
 
   szallas$: Observable<Szallas> = this.activatedRoute.params.pipe(
-    switchMap(params => this.szallasService.getOne(params['id'])),
+    switchMap(params => {
+      if (params['id'] === '0') {
+        return of(new Szallas());
+      }
+      return this.szallasService.getOne(params['id']);
+    })
   );
+  szallas: Szallas = new Szallas();
 
   constructor(
     private router: Router,
@@ -24,12 +30,21 @@ export class SzallasEditorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  update(szekcio: Szallas): void {
-    this.szallasService.update(szekcio).subscribe({
-      next: updatedSzallas => this.router.navigate(['/', 'szallas']),
-      error: err => console.error(err),
-    });
+  onSave(szallas: Szallas): void {
+    if (!szallas._id) {
+      szallas._id = undefined;
+      this.szallasService.create(szallas).subscribe({
+        next: updatedSzallas => {
+          this.router.navigate(['/', 'szallas'])
+        },
+        error: err => console.error(err),
+      });
+    } else {
+      this.szallasService.update(szallas).subscribe({
+        next: updatedSzallas => this.router.navigate(['/', 'szallas']),
+         error: err => console.error(err),
+      });
+    }
   }
 
 }
-

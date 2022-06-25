@@ -29,13 +29,17 @@ export class SzallasComponent implements OnInit {
   }
 
   deleteEntity(szallas: Szallas): void {
-    this.szallasService.delete(szallas[`_id`]).subscribe({
-      next: ()  => {
-        this.list$ = this.szallasService.getAll();
-      },
-      error: err => console.error(err),
-    });
+    if (szallas._id) {
+      this.szallasService.delete(szallas._id).subscribe({
+        next: ()  => {
+          this.list$ = this.szallasService.getAll()
+        },
+        error: err => console.error(err)
+      })
+    }
   }
 
-
+  createEntity(): void {
+    this.router.navigate(['/', 'szallas', 'edit', '0']);
+  }
 }
