@@ -1,6 +1,17 @@
 module.exports = (model) => {
     return {
-        findAll: () => model.find({}),
+        findAll: (params = {}) => {
+            if (Object.keys(params).length) {
+                Object.keys(params).map( key => {
+                    params[key] = { 
+                        $regex: '.*' + params[key] + '.*', 
+                        $options: 'i' 
+                    };
+                });
+                return model.find(params);
+            }
+            return model.find(params);
+        },
         findOne: (id) => model.findById(id),
         
         updateOne: async (id, body) => {

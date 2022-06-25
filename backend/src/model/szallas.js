@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
-const SzallasokSchema = mongoose.Schema({
+const SzallasSchema = mongoose.Schema({
     name: {
         type: String,
-        require: true,
+        required: true,
      },
      address: {
         type: String,
-        require: true,
+        required: true,
      },
 }, {
     timeStamps: true
  });
 
-module.exports = mongoose.model('Szallasok', SzallasokSchema);
+module.exports = mongoose.model('Szallas', SzallasSchema);

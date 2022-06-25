@@ -11,6 +11,6 @@ export class EloadoService extends BaseService<Eloado> {
   constructor(
     http: HttpClient,
   ) {
-    super(http, 'eloadok');
+    super(http, 'eloado');
   }
 }

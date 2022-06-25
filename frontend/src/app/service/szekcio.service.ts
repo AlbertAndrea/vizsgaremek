@@ -11,6 +11,6 @@ export class SzekcioService extends BaseService<Szekcio> {
   constructor(
     http: HttpClient,
   ) {
-    super(http, 'szekciok');
+    super(http, 'szekcio');
   }
 }

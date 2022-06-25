@@ -12,6 +12,6 @@ export class ResztvevoService extends BaseService<Resztvevo> {
   constructor(
     http: HttpClient,
   ) {
-    super(http, 'resztvevok');
+    super(http, 'resztvevo');
   }
 }

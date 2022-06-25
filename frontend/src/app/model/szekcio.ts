@@ -1,5 +1,5 @@
 export class Szekcio {
   _id?: string = '';
-  section: string = '';
+  sectionName: string = '';
   section_leader: string = '';
 }

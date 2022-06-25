@@ -2,7 +2,7 @@ const app = require('./server');
 const mongoose = require('mongoose');
 const supertest = require('supertest');
 const config = require('config');
-const Iskolak = require('./model/iskolak');
+const Iskola = require('./model/iskola');
 const { response } = require('jest-mock-req-res');
 const { Test } = require('supertest');
 
@@ -25,16 +25,16 @@ describe('REST API integration tests', () => {
         mongoose.connection.close( () => done() );
     });
 
-    test('GET /iskolak', done => {
-        supertest(app).get('/iskolak').expect(200)
+    test('GET /iskola', done => {
+        supertest(app).get('/iskola').expect(200)
             .then(response => {
                 expect(Array.isArray(response.body)).toBeTruthy();
                 done();
         });
     });
 
-    test('GET /szekciok', done => {
-        supertest(app).get('/szekciok').expect(200)
+    test('GET /szekcio', done => {
+        supertest(app).get('/szekcio').expect(200)
             .then(response => {
                 expect(Array.isArray(response.body)).toBeTruthy();
                 done();

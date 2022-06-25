@@ -11,6 +11,6 @@ export class SzallasService extends BaseService<Szallas> {
   constructor(
     http: HttpClient,
   ) {
-    super(http, 'szallasok');
+    super(http, 'szallas');
   }
 }

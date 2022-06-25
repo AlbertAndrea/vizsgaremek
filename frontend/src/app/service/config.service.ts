@@ -29,7 +29,7 @@ export class ConfigService {
     {key: 'name', title: 'Előadó neve'},
     {key: 'school', title: 'Előadó iskolája'},
     {key: 'presentationName', title: 'Előadás címe'},
-    {key: 'section', title: 'Szekció neve'},
+    {key: 'szekcio', title: 'Szekció neve'},
   ];
 
   iskolaTableColumns: INgxTableColumn[] = [
@@ -40,7 +40,7 @@ export class ConfigService {
 
   szekcioTableColumns: INgxTableColumn[] = [
     //{key: '_id', title: '#'},
-    {key: 'section', title: 'Szekció neve'},
+    {key: 'sectionName', title: 'Szekció neve'},
     {key: 'section_leader', title: 'Szekcióvezető'}
   ];
 

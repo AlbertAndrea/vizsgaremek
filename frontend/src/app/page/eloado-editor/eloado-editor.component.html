@@ -29,6 +29,16 @@
       class="form-control"
     > -->
   </div>
+  <div class="form-group">
+    <label>Szekció neve</label>
+    <select [(ngModel)]="eloado.szekcio" name="szekcio" class="form-control">
+      <option value="">Válasszon szekciót!</option>
+      <option *ngFor="let szek of szekciok$ | async" [value]="szek._id">
+        {{ szek.sectionName }}
+      </option>
+
+    </select>
+  </div>
   <button type="submit" class="btn btn-primary mt-4">
     Mentés
   </button>

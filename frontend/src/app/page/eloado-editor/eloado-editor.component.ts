@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, switchMap, of } from 'rxjs';
 import { Eloado } from 'src/app/model/eloado';
 import { EloadoService } from 'src/app/service/eloado.service';
+import { SzekcioService } from 'src/app/service/szekcio.service';
 
 
 @Component({
@@ -22,14 +23,19 @@ export class EloadoEditorComponent implements OnInit {
   );
   eloado: Eloado = new Eloado();
 
+  szekciok$ = this.szekcioService.getAll();
+
   constructor(
     private router: Router,
     private eloadoService: EloadoService,
     private activatedRoute: ActivatedRoute,
+    private szekcioService: SzekcioService
   ) { }
 
   ngOnInit(): void {
-
+    // this.szekcioService.search('sectionName=Új').subscribe(
+    //   res => console.log(res),
+    // );
   }
 
   onSave(eloado: Eloado): void {
@@ -49,11 +55,3 @@ export class EloadoEditorComponent implements OnInit {
     }
   }
 }
-
-
-// update(eloado: Eloado): void {
-  //   this.eloadoService.update(eloado).subscribe({
-  //     next: updatedEloado => this.router.navigate(['/', 'eloado']),
-  //     error: err => console.error(err),
-  //   });
-  // }

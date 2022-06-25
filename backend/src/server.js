@@ -24,10 +24,11 @@ app.use(bodyParser.json());
 const authenticatedJwt = require('./model/auth/authenticate');
 
 //Oldalak
-app.use('/eloadok', authenticatedJwt, require('./controller/eloadok/eloadok.router'));
-app.use('/szekciok', require('./controller/szekciok/szekciok.router'));
-app.use('/iskolak', require('./controller/iskolak/iskolak.router'));
-app.use('/resztvevok', require('./controller/resztvevok/resztvevok.router'));app.use('/szallasok', require('./controller/szallasok/szallasok.router'));
+app.use('/eloado', authenticatedJwt, require('./controller/eloado/eloado.router'));
+app.use('/szekcio', require('./controller/szekcio/szekcio.router'));
+app.use('/iskola', require('./controller/iskola/iskola.router'));
+app.use('/resztvevo', require('./controller/resztvevo/resztvevo.router'));
+app.use('/szallas', require('./controller/szallas/szallas.router'));
 app.use('/login', require('./controller/login/login.router'));
 
  app.use('/', (req, res) => {

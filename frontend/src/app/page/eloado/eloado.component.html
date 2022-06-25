@@ -4,13 +4,6 @@
 
 <!-- <h2>Előadók listája</h2> -->
 
-<div class="row">
-  <div class="col-3 d-grid mb-3">
-    <button type="submit" [routerLink]="['/', 'eloado', 'edit', '0']" class="btn btn-success w-100">
-     Új előadó
-    </button>
-  </div>
-</div>
 
 <ngx-data-table
   *ngIf="list$ | async as list"
@@ -18,5 +11,5 @@
   [list]="list"
   (onEdit)="startEdit($event)"
   (onDelete)="deleteEntity($event)"
-
+  (onCreate)="createEntity()"
 ></ngx-data-table>

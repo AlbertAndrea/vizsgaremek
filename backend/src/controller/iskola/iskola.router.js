@@ -1,6 +1,6 @@
 const express = require('express');
-const Szekciok = require('../../model/szekciok');
-const controller = require('../base/base.controller')(Szekciok);
+const Iskola = require('../../model/iskola');
+const controller = require('../base/base.controller')(Iskola);
  
 const router = express.Router();
 
@@ -30,3 +30,13 @@ router.delete('/:id', (req, res, next) => {
  });
 
 module.exports = router;
+
+
+// fetch('http://localhost:3000/eloadok', {
+//     method: 'GET',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${temp1.accessToken}`
+//     },
+// }).then(r => r.json())
+//     .then( d => console.log(d) );

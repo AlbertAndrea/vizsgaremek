@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Eloado } from 'src/app/model/eloado';
 import { ConfigService } from 'src/app/service/config.service';
 import { EloadoService } from 'src/app/service/eloado.service';
+import { SzekcioService } from 'src/app/service/szekcio.service';
 
 @Component({
   selector: 'app-eloado',
@@ -15,11 +16,10 @@ export class EloadoComponent implements OnInit {
 
   list$ = this.eloadoService.getAll();
 
-
-
   constructor(
     private config: ConfigService,
     private eloadoService: EloadoService,
+    private szekcioService: SzekcioService,
     private router: Router,
   ) { }
 
@@ -28,7 +28,7 @@ export class EloadoComponent implements OnInit {
 
   startEdit(eloado: Eloado): void {
     this.router.navigate(['/', 'eloado', 'edit', eloado._id]);
-  };
+    };
 
   deleteEntity(eloado: Eloado): void {
     if (eloado._id) {
@@ -41,4 +41,7 @@ export class EloadoComponent implements OnInit {
     }
   }
 
+  createEntity(): void {
+    this.router.navigate(['/', 'eloado', 'edit', '0']);
+  }
 };

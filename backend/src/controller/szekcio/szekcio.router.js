@@ -1,12 +1,17 @@
 const express = require('express');
-const Resztvevok = require('../../model/resztvevok');
-const controller = require('../base/base.controller')(Resztvevok);
+const Szekcio = require('../../model/szekcio');
+const controller = require('../base/base.controller')(Szekcio);
  
 const router = express.Router();
 
 //get
 router.get('/', (req, res, next) => {
     return controller.findAll(req, res, next);
+});
+
+//search
+router.get('/search', (req, res, next) => {
+    return controller.search(req, res, next);
 });
 
 //get one

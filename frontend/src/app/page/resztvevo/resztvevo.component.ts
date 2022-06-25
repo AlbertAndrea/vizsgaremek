@@ -37,4 +37,8 @@ export class ResztvevoComponent implements OnInit {
       })
     }
   }
+
+  createEntity(): void {
+    this.router.navigate(['/', 'eloado', 'edit', '0']);
+  }
 }

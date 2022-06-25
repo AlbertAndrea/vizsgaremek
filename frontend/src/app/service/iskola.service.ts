@@ -11,6 +11,6 @@ export class IskolaService extends BaseService<Iskola> {
   constructor(
     http: HttpClient,
   ) {
-    super(http, 'iskolak');
+    super(http, 'iskola');
   }
 }

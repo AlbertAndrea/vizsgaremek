@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const ResztvevokSchema = mongoose.Schema({
+const ResztvevoSchema = mongoose.Schema({
     name: {
         type: String,
-        require: true,
+        required: true,
         validate: {
             validator: function(v) {
                return /^[a-űA-Ű \-\.]{5,75}$/.test(v);
@@ -12,14 +12,14 @@ const ResztvevokSchema = mongoose.Schema({
      },
      school: {
         type: String,
-        require: true,
+        required: true,
      },
      presentation: {
         type: Boolean,
-        require: true,
+        required: true,
      }
 }, {
    timeStamps: true
 });
 
-module.exports = mongoose.model('Resztvevok', ResztvevokSchema);
+module.exports = mongoose.model('Resztvevo', ResztvevoSchema);

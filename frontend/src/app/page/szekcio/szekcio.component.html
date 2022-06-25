@@ -6,18 +6,11 @@
 
 <!-- <h2>Szekciók listája</h2> -->
 
-<div class="row">
-  <div class="col-3 d-grid mb-3">
-    <button type="submit" [routerLink]="['/', 'szekcio', 'edit', '0']" class="btn btn-success w-100">
-     Új szekció
-    </button>
-  </div>
-</div>
-
 <ngx-data-table
   *ngIf="list$ | async as list"
   [columns]="columns"
   [list]="list"
   (onEdit)="startEdit($event)"
   (onDelete)="deleteEntity($event)"
+  (onCreate)="createEntity()"
 ></ngx-data-table>

@@ -1,6 +1,6 @@
 const express = require('express');
-const Szallasok = require('../../model/szallasok');
-const controller = require('../base/base.controller')(Szallasok);
+const Szallas = require('../../model/szallas');
+const controller = require('../base/base.controller')(Szallas);
  
 const router = express.Router();
 

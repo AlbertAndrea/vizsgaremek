@@ -55,5 +55,11 @@ module.exports = (model) => {
                 res.json(err);
               });
          },
+
+         search(req, res, next) {
+            return service.findAll(req.query)
+                .then(list => res.json(list));
+         }
+
     };
 };

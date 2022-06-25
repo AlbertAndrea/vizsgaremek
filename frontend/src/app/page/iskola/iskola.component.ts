@@ -38,5 +38,9 @@ export class IskolaComponent implements OnInit {
     }
   }
 
+  createEntity(): void {
+    this.router.navigate(['/', 'eloado', 'edit', '0']);
+  }
+
 
 }
