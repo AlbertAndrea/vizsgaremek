@@ -24,6 +24,8 @@ import { SzallasEditorComponent } from './page/szallas-editor/szallas-editor.com
 import { LoginComponent } from './page/login/login.component';
 import { JwtInterceptor } from './service/jwt.interceptor';
 import { AuthService } from './service/auth.service';
+import { UserComponent } from './page/user/user.component';
+import { UserEditorComponent } from './page/user-editor/user-editor.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { AuthService } from './service/auth.service';
     SzekcioEditorComponent,
     SzallasEditorComponent,
     LoginComponent,
+    UserComponent,
+    UserEditorComponent,
   ],
   imports: [
     BrowserModule,

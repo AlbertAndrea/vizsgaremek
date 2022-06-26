@@ -1,14 +1,13 @@
+//nem működik ha a bejelentkezést beállítom
+
 const app = require('./server');
 const mongoose = require('mongoose');
 const supertest = require('supertest');
 const config = require('config');
-const Iskola = require('./model/iskola');
-const { response } = require('jest-mock-req-res');
-const { Test } = require('supertest');
 
 describe('REST API integration tests', () => {
     beforeEach( done => {
-        const { host, user, pass } = config.get('database'); //ide teszt adatbázis kell majd !!!!
+        const { host, user, pass } = config.get('database');
         mongoose.connect(`mongodb+srv://${host}`, {
             user,
             pass,
@@ -33,6 +32,22 @@ describe('REST API integration tests', () => {
         });
     });
 
+    test('GET /eloado', done => {
+        supertest(app).get('/eloado').expect(200)
+            .then(response => {
+                expect(Array.isArray(response.body)).toBeTruthy();
+                done();
+        });
+    });
+
+    test('GET /resztvevo', done => {
+        supertest(app).get('/resztvevo').expect(200)
+            .then(response => {
+                expect(Array.isArray(response.body)).toBeTruthy();
+                done();
+        });
+    });
+
     test('GET /szekcio', done => {
         supertest(app).get('/szekcio').expect(200)
             .then(response => {
@@ -41,4 +56,20 @@ describe('REST API integration tests', () => {
         });
     });
 
+    test('GET /szallas', done => {
+        supertest(app).get('/szallas').expect(200)
+            .then(response => {
+                expect(Array.isArray(response.body)).toBeTruthy();
+                done();
+        });
+    });
+
+    test('GET /user', done => {
+        supertest(app).get('/user').expect(200)
+            .then(response => {
+                expect(Array.isArray(response.body)).toBeTruthy();
+                done();
+        });
+    });
+ 
 });

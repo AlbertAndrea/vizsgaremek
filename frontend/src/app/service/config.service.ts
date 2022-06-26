@@ -19,9 +19,7 @@ export class ConfigService {
     {link: '/eloado', title: 'Előadók', icon: 'user'},
     {link: '/resztvevo', title: 'Résztvevők', icon: 'users'},
     {link: '/szallas', title: 'Szállások', icon: 'moon'},
-
-
-    //itt veszük fel az oldalakat
+    {link: '/user', title: 'Felhasználók', icon: 'heart'},
   ];
 
   eloadoTableColumns: INgxTableColumn[] = [
@@ -56,6 +54,18 @@ export class ConfigService {
     {key: 'school', title: 'Résztvevő iskolája'},
     {key: 'presentation', title: 'Előadást tart'}
   ];
+
+  userTableColumns: INgxTableColumn[] = [
+    //{key: '_id', title: '#'},
+    {key: 'email', title: 'Email'},
+    {key: 'lastName', title: 'Vezetéknév'},
+    {key: 'firstName', title: 'Keresztnév'},
+    {key: 'role', title: 'Jogosultság'},
+    {key: 'password', title: 'Jelszó'}
+  ];
+
+
+
 
   constructor() { }
 

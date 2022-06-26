@@ -1,0 +1,41 @@
+<form (ngSubmit)="onSave(user)" *ngIf="user$ | async as user">
+  <div class="form-group mt-3">
+    <label>Email</label>
+    <input
+      name="email"
+      [(ngModel)]="user.email"
+      type="text"
+      class="form-control"
+    >
+    <label>Keresztnév</label>
+    <input
+      name="firstName"
+      [(ngModel)]="user.firstName"
+      type="text"
+      class="form-control"
+    >
+    <label>Vezetéknév</label>
+    <input
+      name="lastName"
+      [(ngModel)]="user.lastName"
+      type="text"
+      class="form-control"
+    >
+    <label>Jogosultság</label>
+    <input
+      name="role"
+      [(ngModel)]="user.role"
+      type="text"
+      class="form-control"
+    >
+    <label>Password</label>
+    <input
+      name="password"
+      [(ngModel)]="user.password"
+      type="text"
+      class="form-control"
+    ></div>
+  <button class="btn btn-primary mt-4">
+    Mentés
+  </button>
+</form>

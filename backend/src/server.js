@@ -4,6 +4,10 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+
+const swaggerDocumnent = YAML.load('./docs/swagger.yaml');
 
 const app = express();
 
@@ -24,12 +28,16 @@ app.use(bodyParser.json());
 const authenticatedJwt = require('./model/auth/authenticate');
 
 //Oldalak
-app.use('/eloado', authenticatedJwt, require('./controller/eloado/eloado.router'));
+app.use('/eloado', require('./controller/eloado/eloado.router'));
 app.use('/szekcio', require('./controller/szekcio/szekcio.router'));
 app.use('/iskola', require('./controller/iskola/iskola.router'));
 app.use('/resztvevo', require('./controller/resztvevo/resztvevo.router'));
 app.use('/szallas', require('./controller/szallas/szallas.router'));
 app.use('/login', require('./controller/login/login.router'));
+app.use('/user', require('./controller/user/user.router'));
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocumnent));
+
 
  app.use('/', (req, res) => {
      console.log(req.url);

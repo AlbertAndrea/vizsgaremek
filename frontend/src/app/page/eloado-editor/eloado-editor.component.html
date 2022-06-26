@@ -1,5 +1,5 @@
 <form (ngSubmit)="onSave(eloado)" *ngIf="eloado$ | async as eloado">
-  <div class="form-group">
+  <div class="form-group mt-3">
     <label>Előadó neve</label>
     <input
       name="name"
@@ -36,7 +36,6 @@
       <option *ngFor="let szek of szekciok$ | async" [value]="szek._id">
         {{ szek.sectionName }}
       </option>
-
     </select>
   </div>
   <button type="submit" class="btn btn-primary mt-4">

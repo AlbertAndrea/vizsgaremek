@@ -3,6 +3,6 @@ export class User {
   email: string = '';
   lastName: string = '';
   firstName: string = '';
-  password?: string = '';
-  role?: number = 1;
+  password: string = '';
+  role: number = 1;
 }

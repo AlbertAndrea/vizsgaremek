@@ -1,5 +1,5 @@
 <form (ngSubmit)="onSave(resztvevo)" *ngIf="resztvevo$ | async as resztvevo">
-  <div class="form-group">
+  <div class="form-group mt-3">
     <label>Résztvevő neve</label>
     <input
       name="name"
@@ -13,15 +13,23 @@
       [(ngModel)]="resztvevo.school"
       type="text"
       class="form-control"
-    >
-    <label>Előadást tart</label>
+    ></div>
+    <!-- <label>Előadást tart</label>
     <input
       name="presentation"
       [(ngModel)]="resztvevo.presentation"
       type="text"
       class="form-control"
-    ></div>
+    ></div> -->
+    <div class="form-group">
+      <label>Előadást tart</label>
+      <select [(ngModel)]="resztvevo.presentation" name="presentation" class="form-control" >
+        <option value="">Kérem válasszon!</option>
+        <option>Igen</option>
+        <option>Nem</option>
+      </select>
+    </div>
     <button type="submit" class="btn btn-primary mt-4">
-    Mentés
-  </button>
-</form>
+      Mentés
+    </button>
+  </form>

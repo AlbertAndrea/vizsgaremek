@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Eloado } from 'src/app/model/eloado';
 import { ConfigService } from 'src/app/service/config.service';
 import { EloadoService } from 'src/app/service/eloado.service';
-import { SzekcioService } from 'src/app/service/szekcio.service';
 
 @Component({
   selector: 'app-eloado',
@@ -19,7 +18,6 @@ export class EloadoComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private eloadoService: EloadoService,
-    private szekcioService: SzekcioService,
     private router: Router,
   ) { }
 

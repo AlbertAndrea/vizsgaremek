@@ -12,6 +12,8 @@ import { SzallasEditorComponent } from './page/szallas-editor/szallas-editor.com
 import { SzallasComponent } from './page/szallas/szallas.component';
 import { SzekcioEditorComponent } from './page/szekcio-editor/szekcio-editor.component';
 import { SzekcioComponent } from './page/szekcio/szekcio.component';
+import { UserEditorComponent } from './page/user-editor/user-editor.component';
+import { UserComponent } from './page/user/user.component';
 
 const routes: Routes = [
   {
@@ -61,6 +63,14 @@ const routes: Routes = [
   {
     path: 'szallas/edit/:id',
     component: SzallasEditorComponent,
+  },
+  {
+    path: 'user',
+    component: UserComponent,
+  },
+  {
+    path: 'user/edit/:id',
+    component: UserEditorComponent,
   },
 
 ];

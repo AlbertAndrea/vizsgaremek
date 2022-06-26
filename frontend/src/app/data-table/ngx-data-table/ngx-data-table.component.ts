@@ -33,6 +33,8 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
 
   page: number = 1;
 
+  phrase: string = '';
+
   get pageList(): number[] {
     const pageSize = Math.ceil( this.list.length / this.pageSize );
     return new Array(pageSize).fill(1).map( (item, index) => index + 1);

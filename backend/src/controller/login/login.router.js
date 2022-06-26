@@ -6,21 +6,21 @@ const router = express.Router();
 
 //post
 router.post('/', async (req, res, next) => {
-    // const newUser = new User({
-    //     email: 'test@test.hu',
-    //     lastName: 'Elek',
-    //     firstName: 'Test',
-    //     password: 'test789',
-    // });
+    //  const newUser = new User({
+    //      email: 'test@test.hu',
+    //      lastName: 'Elek',
+    //      firstName: 'Test',
+    //      password: 'test789',
+    //  });
     
-    // try {
-    //     await newUser.save();
-    // } catch(e) {
-    //     res.statusCode = 401;
-    //     return res.json({error: 'Database Error!'});
-    // }
+    //  try {
+    //      await newUser.save();
+    //  } catch(e) {
+    //      res.statusCode = 401;
+    //      return res.json({error: 'Database Error!'});
+    //  }
 
-    // return res.json({message: 'user created'});
+    //  return res.json({message: 'user created'});
 
     const { email, password } = req.body;
     const user =  await User.findOne({ email });
