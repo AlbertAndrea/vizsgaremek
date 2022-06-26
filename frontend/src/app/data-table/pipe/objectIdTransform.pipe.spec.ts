@@ -1,4 +1,4 @@
-import { ObjectIdTransformPipe } from './object-id-transform.pipe';
+import { ObjectIdTransformPipe } from './objectIdTransform';
 
 describe('ObjectIdTransformPipe', () => {
   it('create an instance', () => {

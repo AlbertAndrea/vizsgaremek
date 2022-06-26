@@ -35,9 +35,19 @@ export class NgxDataTableComponent<T extends {[x: string]: any}> implements OnIn
 
   phrase: string = '';
 
+  filterKey: string = '';
+
   get pageList(): number[] {
     const pageSize = Math.ceil( this.list.length / this.pageSize );
     return new Array(pageSize).fill(1).map( (item, index) => index + 1);
+  }
+
+  columnKey: string = '';
+  sortDir: number = -1;
+
+  onColumnSelect(key: string): void {
+    this.columnKey = key;
+    this.sortDir = this.sortDir * -1;
   }
 
   constructor() { }
