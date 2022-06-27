@@ -4,9 +4,8 @@ module.exports = (req, res, next) => {
     const authHeader = req.headers.authorization;
 
     if (authHeader) {
-        //Bearer adsfsrshd455jjljhjgff6.dhgfhjgggh567
         const token = authHeader.split(' ')[1];
-        jwt.verify(token, 'egynagyontitkosszöveg', (err, user) => {
+        jwt.verify(token, `${process.env.ACCESS_TOKEN_SECRET}`, (err, user) => {
             if (err) {
                 return res.sendStatus(403);
             }

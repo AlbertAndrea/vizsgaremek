@@ -3,43 +3,33 @@
 ## Konferenciaszervezés weboldala
 ________________________________________
 ## Miért jó nekünk ez a weboldal?
-A konferencia szervezésekor fontos, hogy legyen egy a szervezők és a résztvevők számára is elérhető felület. A weboldal célja, hogy átlátható struktúrába  öntse egy adminisztrációs felületen keresztül a konferencia tervezett szekcióit,, a konferencia résztvevőit / előadóit, a szállás és étkezési igényeket, ezáltal összetett képet kapva a konferencia tervezésével kapcsolatos fontos feladatokról és a pénzügyi kiadásokról is. Valamint lesznek olyan aloldalak is, melyek a résztvevőknek is hasznos információkkal szolgálnak.
+A konferencia szervezésekor fontos, hogy legyen egy a szervezők/résztvevők számára elérhető felület. A weboldal célja, hogy átlátható struktúrába  öntse egy adminisztrációs felületen keresztül a konferencia tervezett szekcióit, a konferencia résztvevőit és előadóit, a szállás és étkezési igényeket, ezáltal összetett képet kapva a konferencia tervezésével kapcsolatos fontos feladatokról.
 ________________________________________
 ## A Home főoldal
 ________________________________________
-A weboldal kezdőoldala, amely az érdeklődés felkeltését is szolgálja. Itt érdekes híreket, korábbi konferenciák statisztikáit találhatjuk. Ismertetjük a weboldalt. Könnyen kezelhető navigációs lehetősséget biztosítunk a további oldalak között. Az oldal reszponzív. A navigációs sávban egy egyszerű kereső is elhelyezhető.
+A weboldal kezdőoldala, a bejelentkezés és a tájékozódás oldala. Bejelentkezés után lehetőség van az adatok szerkesztésére, törlésére, új adat felvételére. Könnyen kezelhető navigációs lehetősséget biztosítunk a további oldalak között. Az oldal reszponzív.
 #### Elfogadási kritérium:
 > - Az oldal mobilbarát, figyelemfelkeltő, áttekinthető és egyszerű.
 > - A menü mobilbarát, könnyen kezelhető, és az oldal felső részén mindig látható.
 ________________________________________
 ## Autentikációs oldal
 ________________________________________
-Ezen az oldalon keresztül jelentkezhetnek be az adminisztrátorok és regisztrálhatnak a felhasználók.
+Ezen az oldalon keresztül jelentkezhetnek be az adminisztrátorok.
 
 Bejelentkezés
 Alábbiak megadása szükséges:
-  -	E-mail cím / Felhasználónév
+  -	E-mail cím
   -	Jelszó
 
-Regisztráció
-Alábbiak megadása szükséges:
-  -	Vezetéknév
-  -	Keresztnév
-  -	Iskola neve
-  -	Iskola címe
-  -	Saját e-mail cím
-  -	Jelszó
 
 #### Elfogadási kritérium:
-> - A regisztráció egy űrlap kitöltésével történik.
-> - A regisztráció mobilbarát.
-> - A regisztráció egyértelmű és könnyen kezelhető.
+> - Az adminisztrátorok egyszerűen tudják szerkeszteni az adatokat.
 > - Az adatok ellenőrzés alá kerülnek, hogy megfelelő adatot irt-e be a felhasználó.
 
 ________________________________________
 ## Az adatbázis
 ________________________________________
-Az adatbázisban lehetőség nyílik a résztvevők és egyéni igényeik listázására. Kétfajta nézetet láthatunk az egyik egy táblázatos, listás verzió, míg a másodikban kártyákat használva jeleníthetjük meg csoportosítva ezzel az adatainkat.
+Az adatbázisban lehetőség nyílik az előadók, a szekciók és a résztvevők listázására. 
 Milyen lehetőségeink vannak az adatbázisban?
   -	Kereshetünk az adatok között.
   -	Rendezhetjük az adatokat.
@@ -47,32 +37,30 @@ Milyen lehetőségeink vannak az adatbázisban?
   -	Az adatokat szerkeszthetjük.
   -	Az adatokat törölhetjük, ebben az esetben egy felugró modal-lal is megkérdezzük, hogy véletlen törlések esélyét csökkentsük.
 
-A táblázat vagy a kártyák tartalma
-  -	Résztvevő regisztrációs adatai
+A táblázat tartalma
+  -	Résztvevő adatai
   -	Előadást tart/nem tart
   -	Előadás címe
+  - Szekciók
   -	Választott szekciók
-  -	Szállás igények
-  -	Étkezési igények
-
+  -	Szállás
 #### Elfogadási kritérium:
 > - Az adattárolás és az adatkezelés egy felhőben található MongoDB adatbázisban történik.
 > - Van lehetőség az adatok megjelenítésére, módosítására, törlésére.
 > - Van lehetőség új elem bevitelére.
-> - Van lehetőség az adatok szűrésére és rendezésére.
+> - Van lehetőség az adatok rendezésére.
 ________________________________________
 ## A tervezett aloldalak
 ________________________________________
 ### Konferencia szekciók
-Ezen az oldalon kártyákon láthatjuk az egyes szekciók leírását, előadóit és az előadások rövid kivonatát.
+Ezen az oldalon láthatjuk az egyes szekciókat, előadóit.
 
 #### Elfogadási kritérium:
 > - Az oldal mobilbarát.
 > - Az oldalon szerepelnek a választható szekciók, előadók.
-> - Az oldalon elérhető az előadások rövid kivonata.
 
 ### Szálláshelyek
-Ezen az oldalon kártyákon láthatjuk az egyes szálláshelyeket.
+Ezen az oldalon kilistázzuk az ajánlott szálláshelyeket.
 
 #### Elfogadási kritérium:
 > - Az oldal mobilbarát.
@@ -83,10 +71,7 @@ A felhasználó megtekintheti a szervező elérhetőségeit, címét, telefonsz�
 
 #### Elfogadási kritérium:
 > - Az oldal mobilbarát.
-> - Az oldalon szerepel a szervező neve, telefonszáma, e-mail címe és egy térkép, amelyen fel van tüntetve a szervező címe.
-
-### Statisztikai adatok
-A konferencia különböző adatait adatvizuációs aloldalon is megjeleníthetjük.
+> - Az oldalon szerepel a szervező neve, telefonszáma, e-mail címe.
 
 ### További adatok a projektről
 A projekt megvalósítása 6 hetet vesz igénybe.

@@ -23,6 +23,7 @@ export class ResztvevoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   startEdit(resztvevo: Resztvevo): void {
     this.router.navigate(['/', 'resztvevo', 'edit', resztvevo._id]);
   }

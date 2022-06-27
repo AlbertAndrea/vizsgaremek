@@ -1,19 +1,19 @@
 <div class="row justify-content-md-center">
-  <main class="form-signin w-100 m-auto">
+  <main class="form-signin w-60 m-auto">
     <form (ngSubmit)="onLogin()">
-      <h2 class="h3 mb-3 fw-normal">Please sign in</h2>
+      <h2 class="h4 mb-3 fw-normal">Kérem jelentkezzen be!</h2>
 
       <div class="form-floating">
-        <input name="email" [(ngModel)]="loginData.email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
+        <input name="email" [(ngModel)]="loginData.email" type="email" class="form-control" id="floatingInput"  pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"  placeholder="name@example.com">
+        <label for="floatingInput">Email</label>
       </div>
       <div class="form-floating">
         <input name="password" [(ngModel)]="loginData.password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+        <label for="floatingPassword">Jelszó</label>
       </div>
 
 
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <button class="w-100 btn btn-md btn-primary" type="submit">Bejelentkezés</button>
     </form>
   </main>
 </div>

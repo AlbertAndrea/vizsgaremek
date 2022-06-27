@@ -33,9 +33,7 @@ export class EloadoEditorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.szekcioService.search('sectionName=Új').subscribe(
-    //   res => console.log(res),
-    // );
+
   }
 
   onSave(eloado: Eloado): void {

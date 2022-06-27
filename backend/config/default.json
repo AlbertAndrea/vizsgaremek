@@ -3,5 +3,10 @@
         "user": "userDB",
         "pass": "p3tQAUaqbzIpXkiV",
         "host": "cluster0.3wdo0.mongodb.net/?retryWrites=true&w=majority"
+    },
+    "testdatabase": {
+        "user": "userDB",
+        "pass": "p3tQAUaqbzIpXkiV",
+        "host": "cluster0.3wdo0.mongodb.net/test?retryWrites=true&w=majority"
     }
 }

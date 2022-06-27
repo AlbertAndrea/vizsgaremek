@@ -4,8 +4,20 @@
     <input
       name="email"
       [(ngModel)]="user.email"
+      type="email"
+      class="form-control"
+      required
+      placeholder="email"
+      pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+    >
+    <label>Vezetéknév</label>
+    <input
+      name="lasttName"
+      [(ngModel)]="user.lastName"
       type="text"
       class="form-control"
+      placeholder="Keresztnév"
+      pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)"
     >
     <label>Keresztnév</label>
     <input
@@ -13,13 +25,8 @@
       [(ngModel)]="user.firstName"
       type="text"
       class="form-control"
-    >
-    <label>Vezetéknév</label>
-    <input
-      name="lastName"
-      [(ngModel)]="user.lastName"
-      type="text"
-      class="form-control"
+      placeholder="Vezetéknév"
+      pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)"
     >
     <label>Jogosultság</label>
     <input
@@ -27,6 +34,8 @@
       [(ngModel)]="user.role"
       type="text"
       class="form-control"
+      placeholder="Ide csak szám kerülhet"
+      pattern="^[0-9]*$"
     >
     <label>Password</label>
     <input
